@@ -10,5 +10,5 @@ Xcode 10.x or later
  
  ### Pod Support
 
-* FaceBook SDK\
+* FaceBook SDK
 * Brian Tree
