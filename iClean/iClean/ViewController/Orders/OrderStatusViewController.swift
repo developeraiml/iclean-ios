@@ -72,8 +72,6 @@ class OrderStatusViewController: BaseViewController {
             
             api.retreiveOrder(orderId: orderId) { (success, response, error) in
                 
-                debugPrint(response)
-                
                 DispatchQueue.main.async(execute: { [weak self] in
                     guard let strongSelf = self else { return }
                     
@@ -115,7 +113,7 @@ class OrderStatusViewController: BaseViewController {
     }
     
     @IBAction func newOrderAction(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderViewController") as? OrderViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderVC) as? OrderViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -126,7 +124,7 @@ class OrderStatusViewController: BaseViewController {
     }
     
     func openEditOrderScreen(isRescheduled : Bool, withPickDrop pickup: Bool) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderUpdateViewController") as? OrderUpdateViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderUpdateVC) as? OrderUpdateViewController
         
         vc?.editPickInfo = pickup
         vc?.pickObj = orderDetails
@@ -156,7 +154,7 @@ class OrderStatusViewController: BaseViewController {
                 stopTimer()
                 
                 if self.rescheduleVC == nil {
-                    let vc = storyboard?.instantiateViewController(withIdentifier: "RescheduleViewController") as? RescheduleViewController
+                    let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.rescheduleVC) as? RescheduleViewController
                     
                     vc?.driverNotes = orderDetails?.pickupDriverNotes
                     vc?.orderId = orderDetails?.uid ?? "0"
@@ -191,7 +189,7 @@ class OrderStatusViewController: BaseViewController {
                 stopTimer()
                 
                 if self.rescheduleVC == nil  {
-                    let vc = storyboard?.instantiateViewController(withIdentifier: "RescheduleViewController") as? RescheduleViewController
+                    let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.rescheduleVC) as? RescheduleViewController
                     
                     vc?.driverNotes = orderDetails?.dropOffDriverNotes
                     vc?.orderId = orderDetails?.uid ?? "0"
@@ -249,7 +247,7 @@ class OrderStatusViewController: BaseViewController {
     func openReceiptScreen() {
         
         DispatchQueue.main.async {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceiptViewController") as? ReceiptViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: GeneralConstants.receiptVC) as? ReceiptViewController
             vc?.orderDetails = self.orderDetails
             self.navigationController?.pushViewController(vc!, animated: true)
         }

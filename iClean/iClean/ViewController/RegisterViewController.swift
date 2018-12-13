@@ -305,7 +305,7 @@ extension RegisterViewController: UITextFieldDelegate {
         
         DispatchQueue.main.async {
             
-            guard let addLocation = self.storyboard?.instantiateViewController(withIdentifier: "RegAddLocationVC") as? AddLocationVC else {
+            guard let addLocation = self.storyboard?.instantiateViewController(withIdentifier: GeneralConstants.registerAddLocation) as? AddLocationViewController else {
                 return
             }
             addLocation.isLoginFlow = true
@@ -321,7 +321,7 @@ extension RegisterViewController {
         
         DispatchQueue.main.async {
             
-            guard let phoneVerfication = self.storyboard?.instantiateViewController(withIdentifier: "LoginPhoneVerificationVC") as? LoginPhoneVerificationVC else {
+            guard let phoneVerfication = self.storyboard?.instantiateViewController(withIdentifier: GeneralConstants.verifyVC) as? LoginPhoneVerificationViewController else {
                 return
             }
             

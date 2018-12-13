@@ -115,7 +115,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as? MenuCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.menuCell) as? MenuCell
         
         let list = isLoggedSM == true ? smMenuList[indexPath.row] : menuList[indexPath.row]
         
@@ -183,49 +183,49 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     fileprivate func showOrderHistory() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderHistoryViewController") as? OrderHistoryViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderHistoryVC) as? OrderHistoryViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showWashSettings() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "HomeWashSettingVC") as? HomeWashSettingVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.homeWashSettingVC) as? HomeWashSettingViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showLocationList() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as? LocationListViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.locationListVC) as? LocationListViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showCards() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "CardListVC") as? CardListVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.cardListVC) as? CardListViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showContactUs() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ContactUsVC") as? ContactUsVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.contactusVC) as? ContactUsViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showFAQ() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "FAQViewController") as? FAQViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.faqVC) as? FAQViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showChangeEmail() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ChangeEmailPasswordVC") as? ChangeEmailPasswordVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.changeEmailPasswordVC) as? ChangeEmailPasswordViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showChangePassword() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ChangeEmailPasswordVC") as? ChangeEmailPasswordVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.changeEmailPasswordVC) as? ChangeEmailPasswordViewController
         vc?.isChangeEmailScreen = false
         self.navigationController?.pushViewController(vc!, animated: true)
     }

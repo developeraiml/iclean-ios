@@ -68,7 +68,7 @@ class OrderViewController: BaseViewController {
         }
         
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderConfirmationVC") as? OrderConfirmationVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderConfirmVC) as? OrderConfirmationViewController
         
         vc?.param = dict
         vc?.orderObject = newOrderObject
@@ -111,7 +111,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableview.dequeueReusableCell(withIdentifier: "OrderSettingCell") as? CustomSettingCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: GeneralConstants.orderSettingCell) as? CustomSettingCell
             
             cell?.selectHandler = { [weak self] selectedKey in
                 
@@ -158,7 +158,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell!
         } else if indexPath.section == 1 {
-            let cell = tableview.dequeueReusableCell(withIdentifier: "OrderPickupCell") as? OrderPickupCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: GeneralConstants.orderPickCell) as? OrderPickupCell
             
             let pickObj = newOrderObject.pickupList[indexPath.row]
             
@@ -221,7 +221,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell!
         } else {
-            let cell = tableview.dequeueReusableCell(withIdentifier: "OrderPromoCell") as? OrderPromoCell
+            let cell = tableview.dequeueReusableCell(withIdentifier: GeneralConstants.orderPromoCell) as? OrderPromoCell
             
             cell?.didBeginEditing = { status in
                  self.originY = cell?.frame.origin.y ?? 0.0
@@ -269,7 +269,7 @@ extension OrderViewController {
         
         self.view.endEditing(true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as? LocationListViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.locationListVC) as? LocationListViewController
         
         vc?.addressSelectHandler = { [weak self] address in
             
@@ -291,7 +291,7 @@ extension OrderViewController {
         
         self.view.endEditing(true)
 
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .datePicker
         vc?.selectedDate = newOrderObject.pickupList[sender.tag].sDate
@@ -321,7 +321,7 @@ extension OrderViewController {
         
         self.view.endEditing(true)
 
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .timePicker
                 

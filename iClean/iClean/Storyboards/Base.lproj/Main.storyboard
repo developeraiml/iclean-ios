@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-546" y="875"/>
         </scene>
-        <!--Home Wash SettingVC-->
+        <!--Home Wash Setting View Controller-->
         <scene sceneID="FGf-FF-17h">
             <objects>
-                <viewController storyboardIdentifier="HomeWashSettingVC" id="Sbv-1B-wKL" customClass="HomeWashSettingVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeWashSettingVC" id="Sbv-1B-wKL" customClass="HomeWashSettingViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apt-Uj-C7u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -891,10 +891,10 @@
             </objects>
             <point key="canvasLocation" x="1356" y="133.5832083958021"/>
         </scene>
-        <!--Wash Setting ListVC-->
+        <!--Wash Setting List View Controller-->
         <scene sceneID="8Uf-Qb-Htf">
             <objects>
-                <viewController storyboardIdentifier="WashSettingListVC" id="agR-ag-tCR" customClass="WashSettingListVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WashSettingListVC" id="agR-ag-tCR" customClass="WashSettingListViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LMb-14-mE3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1919,10 +1919,10 @@
             </objects>
             <point key="canvasLocation" x="3544.8000000000002" y="133.5832083958021"/>
         </scene>
-        <!--Card ListVC-->
+        <!--Card List View Controller-->
         <scene sceneID="0ID-wu-rfq">
             <objects>
-                <viewController storyboardIdentifier="CardListVC" id="4rB-Cp-Xrf" customClass="CardListVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardListVC" id="4rB-Cp-Xrf" customClass="CardListViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TW0-5G-Dqt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3831,10 +3831,10 @@ Earn Credit</string>
             </objects>
             <point key="canvasLocation" x="884" y="2234.0329835082462"/>
         </scene>
-        <!--Order ConfirmationVC-->
+        <!--Order Confirmation View Controller-->
         <scene sceneID="bJe-BR-4Eh">
             <objects>
-                <viewController storyboardIdentifier="OrderConfirmationVC" id="xkl-sF-prP" customClass="OrderConfirmationVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderConfirmationVC" id="xkl-sF-prP" customClass="OrderConfirmationViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MeA-Fi-cax">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4667,10 +4667,10 @@ Earn Credit</string>
             </objects>
             <point key="canvasLocation" x="4276" y="869"/>
         </scene>
-        <!--Add LocationVC-->
+        <!--Add Location View Controller-->
         <scene sceneID="Kcv-Mw-NHk">
             <objects>
-                <viewController storyboardIdentifier="AddLocationVC" id="LpT-pT-Gry" customClass="AddLocationVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddLocationVC" id="LpT-pT-Gry" customClass="AddLocationViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcM-A5-B6k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4918,10 +4918,10 @@ Earn Credit</string>
             </objects>
             <point key="canvasLocation" x="5772" y="134"/>
         </scene>
-        <!--Custom SettingsVC-->
+        <!--Custom Settings View Controller-->
         <scene sceneID="AZP-Zx-U6h">
             <objects>
-                <viewController storyboardIdentifier="CustomSettingsVC" id="DbK-eM-8ak" customClass="CustomSettingsVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomSettingsVC" id="DbK-eM-8ak" customClass="CustomSettingsViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2RE-Jn-8Ju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5699,10 +5699,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="2111" y="134"/>
         </scene>
-        <!--Alert Pop ViewVC-->
+        <!--Alert Pop View View Controller-->
         <scene sceneID="2an-OA-l6v">
             <objects>
-                <viewController storyboardIdentifier="AlertPopViewVC" id="Saq-g7-GhH" customClass="AlertPopViewVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertPopViewVC" id="Saq-g7-GhH" customClass="AlertPopViewViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C3R-t7-0RU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5782,10 +5782,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="-724" y="1632"/>
         </scene>
-        <!--Add CardVC-->
+        <!--Add Card View Controller-->
         <scene sceneID="tRP-zz-AK4">
             <objects>
-                <viewController storyboardIdentifier="AddCardVC" id="dXJ-JR-kF4" customClass="AddCardVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCardVC" id="dXJ-JR-kF4" customClass="AddCardViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="exD-9b-OE3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5972,10 +5972,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="-122" y="134"/>
         </scene>
-        <!--Contact UsVC-->
+        <!--Contact Us View Controller-->
         <scene sceneID="ZSi-wv-gBu">
             <objects>
-                <viewController storyboardIdentifier="ContactUsVC" id="hAa-9U-ifc" customClass="ContactUsVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactUsVC" id="hAa-9U-ifc" customClass="ContactUsViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jza-KF-oNG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6455,10 +6455,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="2580" y="1553.9730134932536"/>
         </scene>
-        <!--Change Email PasswordVC-->
+        <!--Change Email Password View Controller-->
         <scene sceneID="zZ9-YQ-fqZ">
             <objects>
-                <viewController storyboardIdentifier="ChangeEmailPasswordVC" id="auW-Wo-F32" customClass="ChangeEmailPasswordVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeEmailPasswordVC" id="auW-Wo-F32" customClass="ChangeEmailPasswordViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QI1-aT-ezN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6592,10 +6592,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="569" y="134"/>
         </scene>
-        <!--Order Status DetailVC-->
+        <!--Order Status Detail View Controller-->
         <scene sceneID="rxV-K5-645">
             <objects>
-                <viewController storyboardIdentifier="OrderStatusDetailVC" id="ipL-Ly-kh3" customClass="OrderStatusDetailVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrderStatusDetailVC" id="ipL-Ly-kh3" customClass="OrderStatusDetailViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rcO-MA-iej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -6747,10 +6747,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="3356" y="1567"/>
         </scene>
-        <!--Alert Pop ViewVC-->
+        <!--Alert Pop View View Controller-->
         <scene sceneID="0Wb-Z7-Pvd">
             <objects>
-                <viewController storyboardIdentifier="AlertPopViewVCNew" id="pbd-a3-KDj" customClass="AlertPopViewVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertPopViewVCNew" id="pbd-a3-KDj" customClass="AlertPopViewViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="44X-ZH-LZ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7482,6 +7482,6 @@ Are you sure?</string>
         <image name="tickOrange" width="16" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V2O-3y-lyf"/>
+        <segue reference="VcT-Ju-ckF"/>
     </inferredMetricsTieBreakers>
 </document>

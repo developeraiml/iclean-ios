@@ -123,7 +123,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     @IBAction func nextCustomerAction(_ sender: Any) {
         
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "NextCustUpdatesVC") as? NextCustUpdatesVC
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "NextCustUpdatesVC") as? NextCustUpdatesViewController
         nextVC?.order = shiftList?[0].list[0]
         self.navigationController?.pushViewController(nextVC!, animated: true)
     }
@@ -185,7 +185,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "NextCustUpdatesVC") as? NextCustUpdatesVC
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "NextCustUpdatesVC") as? NextCustUpdatesViewController
         nextVC?.order = shiftList?[indexPath.section].list[indexPath.row]
         self.navigationController?.pushViewController(nextVC!, animated: true)
         

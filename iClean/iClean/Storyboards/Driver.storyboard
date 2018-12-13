@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Next Cust UpdatesVC-->
+        <!--Next Cust Updates View Controller-->
         <scene sceneID="XwI-O1-a0L">
             <objects>
-                <viewController storyboardIdentifier="NextCustUpdatesVC" id="4hC-ez-kNL" customClass="NextCustUpdatesVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextCustUpdatesVC" id="4hC-ez-kNL" customClass="NextCustUpdatesViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T7L-mx-Ica">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -721,10 +721,10 @@
             </objects>
             <point key="canvasLocation" x="-26" y="-640"/>
         </scene>
-        <!--Driver NotesVC-->
+        <!--Driver Notes View Controller-->
         <scene sceneID="0uL-55-a81">
             <objects>
-                <viewController storyboardIdentifier="DriverNotesVC" id="cD1-yQ-K45" customClass="DriverNotesVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DriverNotesVC" id="cD1-yQ-K45" customClass="DriverNotesViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rdA-1D-Jdh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

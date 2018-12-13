@@ -82,7 +82,7 @@ class PriceListViewController: BaseViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.priceCell)
         
         let price = self.priceList[indexPath.row]
         

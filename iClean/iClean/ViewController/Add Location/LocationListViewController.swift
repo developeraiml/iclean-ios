@@ -81,7 +81,7 @@ class LocationListViewController: BaseViewController {
         if segue.identifier == "AddLocationVC"
         {
             // Store the transaction whose details we wish to view
-            if let viewController = segue.destination as? AddLocationVC {
+            if let viewController = segue.destination as? AddLocationViewController {
                 viewController.addressHandler = { isAddressAdded in
                    // self.fetchLocation()
                 }
@@ -161,7 +161,7 @@ extension LocationListViewController: UITableViewDataSource,UITableViewDelegate 
         if let handler = addressSelectHandler {
             handler(address)
         } else {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "AddLocationVC") as? AddLocationVC
+            let vc = storyboard?.instantiateViewController(withIdentifier: "AddLocationVC") as? AddLocationViewController
             vc?.address = address
             vc?.addressHandler = { [weak self] isUpdated in
                 

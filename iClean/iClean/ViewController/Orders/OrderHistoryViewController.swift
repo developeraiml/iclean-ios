@@ -52,7 +52,6 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
         let api = OrderNetworkModel()
         api.fetchOrderHistory(offset: "\(offset)") { (success, response, error) in
             
-            debugPrint(response)
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
@@ -120,7 +119,7 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryCell") as? OrderHistoryCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.orderHistoryCell) as? OrderHistoryCell
         let order = self.orderList[indexPath.row]
         
         cell?.dateLabel.text = order.dropOffDate
@@ -155,24 +154,24 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
         let order = self.orderList[indexPath.row]
         
         if order.ordStatus != .Delivery {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "OrderStatusViewController") as? OrderStatusViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderStatusVC) as? OrderStatusViewController
             vc?.orderDetails = order
             self.navigationController?.pushViewController(vc!, animated: true)
         } else {
             
             if order.isPaymentMade == false {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "ReceiptViewController") as? ReceiptViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.receiptVC) as? ReceiptViewController
                 vc?.orderDetails = order
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else if order.rating == -1 {
                 
-                let vc = storyboard?.instantiateViewController(withIdentifier: "WriteReviewViewController") as? WriteReviewViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.writeReviewVC) as? WriteReviewViewController
                 vc?.orderDetails = order
                 navigationController?.pushViewController(vc!, animated: true)
             }
             else {
                 
-                let vc = storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as? ReviewViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.reviewVC) as? ReviewViewController
                 vc?.orderDetials = order
                 self.navigationController?.pushViewController(vc!, animated: true)
             }

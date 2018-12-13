@@ -108,7 +108,7 @@ class OrderUpdateViewController: BaseViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableview.dequeueReusableCell(withIdentifier: "OrderUpdatePickupCell") as? OrderPickupCell
+        let cell = tableview.dequeueReusableCell(withIdentifier: GeneralConstants.orderUpdatePickupCell) as? OrderPickupCell
         
         cell?.pickup.text = editPickInfo == true ? "PICK UP" : "DROP OFF"
         
@@ -196,7 +196,7 @@ extension OrderUpdateViewController {
         
         self.view.endEditing(true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "LocationListViewController") as? LocationListViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.locationListVC) as? LocationListViewController
         
         vc?.addressSelectHandler = { [weak self] address in
             
@@ -226,7 +226,7 @@ extension OrderUpdateViewController {
         
         self.view.endEditing(true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .datePicker
         
@@ -277,7 +277,7 @@ extension OrderUpdateViewController {
         
         self.view.endEditing(true)
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .timePicker
         

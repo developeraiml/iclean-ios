@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
     
     var isViewPresented : Bool = false
 
-    fileprivate var alertPopView: AlertPopViewVC?
+    fileprivate var alertPopView: AlertPopViewViewController?
     
     fileprivate var alert : UIAlertController?
     
@@ -104,7 +104,7 @@ class BaseViewController: UIViewController {
         alertPopView = nil
         
         if alertPopView == nil {
-            alertPopView = storyboard?.instantiateViewController(withIdentifier: "AlertPopViewVCNew") as? AlertPopViewVC
+            alertPopView = storyboard?.instantiateViewController(withIdentifier: "AlertPopViewVCNew") as? AlertPopViewViewController
             
             alertPopView?.willMove(toParent: self)
             self.view.addSubview(alertPopView!.view)
@@ -124,7 +124,7 @@ class BaseViewController: UIViewController {
         alertPopView = nil
         
         if alertPopView == nil {
-            alertPopView = storyboard?.instantiateViewController(withIdentifier: "AlertPopViewVC") as? AlertPopViewVC
+            alertPopView = storyboard?.instantiateViewController(withIdentifier: "AlertPopViewVC") as? AlertPopViewViewController
             
             alertPopView?.popType = popupType
             alertPopView?.willMove(toParent: self)
@@ -146,7 +146,7 @@ class BaseViewController: UIViewController {
         if alertPopView == nil {
             
             let stortBoard = UIStoryboard(name: "Login", bundle: Bundle.main)
-            alertPopView = stortBoard.instantiateViewController(withIdentifier: "AlertPopViewVC") as? AlertPopViewVC
+            alertPopView = stortBoard.instantiateViewController(withIdentifier: "AlertPopViewVC") as? AlertPopViewViewController
             
             alertPopView?.popType = popupType
             alertPopView?.customMessage = title

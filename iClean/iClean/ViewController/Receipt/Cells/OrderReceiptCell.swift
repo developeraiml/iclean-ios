@@ -56,7 +56,7 @@ extension OrderReceiptCell: UICollectionViewDelegate, UICollectionViewDataSource
         
         if indexPath.section == 0 {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemReceiptCell", for: indexPath) as? ItemReceiptCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GeneralConstants.receiptItemCell, for: indexPath) as? ItemReceiptCell
             
             let itm = itemList[indexPath.row]
             
@@ -66,7 +66,7 @@ extension OrderReceiptCell: UICollectionViewDelegate, UICollectionViewDataSource
             return cell!
             
         } else if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemReceiptTipCell", for: indexPath) as? ItemReceiptTipCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GeneralConstants.receiptItemTipCell, for: indexPath) as? ItemReceiptTipCell
             
             cell?.addTipLbl.text = "Add Tip"
             cell?.tipAmount.text = ""
@@ -80,7 +80,7 @@ extension OrderReceiptCell: UICollectionViewDelegate, UICollectionViewDataSource
             
             return cell!
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemReceiptAmountCell", for: indexPath) as? ItemReceiptAmountCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GeneralConstants.receiptItemAmountCell, for: indexPath) as? ItemReceiptAmountCell
             
             let tipAmt = Double(tipAmount ?? "0")
 

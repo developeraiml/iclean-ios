@@ -30,15 +30,13 @@ class HomeViewController: BaseViewController {
     @IBAction func menuAction(_ sender: Any) {
         
         if menuVC == nil {
-            menuVC = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
+            menuVC = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.menuVC) as? MenuViewController
         }
         menuVC?.willMove(toParent: self)
         self.view.addSubview(menuVC!.view)
         self.addChild(menuVC!)
         menuVC!.didMove(toParent: self)
-        
         menuVC?.resetAnimation()
-
         
     }
     
@@ -57,7 +55,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as? HomeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.homeCell) as? HomeCell
         
         let list = homeList[indexPath.row]
         
@@ -86,13 +84,13 @@ extension HomeViewController {
     
     fileprivate func showOrderHistory() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderHistoryViewController") as? OrderHistoryViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderHistoryVC) as? OrderHistoryViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showPlaceOrder() {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "OrderViewController") as? OrderViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.orderVC) as? OrderViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

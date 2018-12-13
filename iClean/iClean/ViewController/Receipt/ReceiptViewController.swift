@@ -96,7 +96,7 @@ class ReceiptViewController: BaseViewController, UITableViewDataSource, UITableV
     fileprivate func openTipScreen() {
         
         DispatchQueue.main.async {
-            let tipVC = self.storyboard?.instantiateViewController(withIdentifier: "TipsViewController") as? TipsViewController
+            let tipVC = self.storyboard?.instantiateViewController(withIdentifier: GeneralConstants.tipsVC) as? TipsViewController
             
             tipVC?.willMove(toParent: self)
             self.view.addSubview(tipVC!.view)
@@ -127,7 +127,7 @@ class ReceiptViewController: BaseViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderDetailsReceiptCell") as? OrderDetailsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.receiptOrderDetailCell) as? OrderDetailsCell
             
             cell?.pickTypeLbl.text = (indexPath.row == 0) ? "PICK UP" : "DROP OFF"
             cell?.pickDate.text = ((indexPath.row == 0) ? orderDetails?.pickupDate ?? "" :
@@ -140,7 +140,7 @@ class ReceiptViewController: BaseViewController, UITableViewDataSource, UITableV
             
             return cell!
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "OrderReceiptCell") as? OrderReceiptCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.receiptOrderCell) as? OrderReceiptCell
             cell?.totalAmount = orderDetails?.orderCost ?? 0.0
             cell?.discount = orderDetails?.discount ?? 0.0
             cell?.itemList = orderDetails?.items ?? []

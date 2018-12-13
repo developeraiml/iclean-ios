@@ -32,7 +32,7 @@ class LoginViewController: LoginBaseViewController {
     @IBAction func showDriveLogin(_ sender: UILongPressGestureRecognizer) {
         
         if sender.state == .ended {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "DriverLoginViewController") as? DriverLoginViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.DriverLoginVC) as? DriverLoginViewController
             
             self.navigationController?.pushViewController(vc!, animated: true)
         }
@@ -130,7 +130,7 @@ class LoginViewController: LoginBaseViewController {
     
     @IBAction func forgotAction(_ sender: Any) {
         
-        guard  let forgotVC = storyboard?.instantiateViewController(withIdentifier: "ForgotViewController") as? ForgotViewController else {
+        guard  let forgotVC = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.forgotVC) as? ForgotViewController else {
             return
         }
         
@@ -170,7 +170,7 @@ extension LoginViewController {
         
         DispatchQueue.main.async {
             
-            guard let phoneVerfication = self.storyboard?.instantiateViewController(withIdentifier: "LoginPhoneVerificationVC") as? LoginPhoneVerificationVC else {
+            guard let phoneVerfication = self.storyboard?.instantiateViewController(withIdentifier: GeneralConstants.verifyVC) as? LoginPhoneVerificationViewController else {
                 return
             }
             

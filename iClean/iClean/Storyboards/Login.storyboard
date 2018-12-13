@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHn-IM-IfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHn-IM-IfL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -777,10 +777,10 @@
             </objects>
             <point key="canvasLocation" x="-354.39999999999998" y="888.30584707646187"/>
         </scene>
-        <!--Login Phone VerificationVC-->
+        <!--Login Phone Verification View Controller-->
         <scene sceneID="CRZ-FA-l1Y">
             <objects>
-                <viewController storyboardIdentifier="LoginPhoneVerificationVC" id="nCV-I3-KXC" customClass="LoginPhoneVerificationVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPhoneVerificationViewController" id="nCV-I3-KXC" customClass="LoginPhoneVerificationViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a9q-ty-aii">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -933,10 +933,10 @@
             </objects>
             <point key="canvasLocation" x="781.60000000000002" y="103.89805097451276"/>
         </scene>
-        <!--Add LocationVC-->
+        <!--Add Location View Controller-->
         <scene sceneID="GSz-N4-Ffx">
             <objects>
-                <viewController storyboardIdentifier="RegAddLocationVC" id="bn9-7E-4je" customClass="AddLocationVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegAddLocationVC" id="bn9-7E-4je" customClass="AddLocationViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpc-Bu-zpq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1188,10 +1188,10 @@
             </objects>
             <point key="canvasLocation" x="663" y="901"/>
         </scene>
-        <!--Wash SettingsVC-->
+        <!--Wash Settings View Controller-->
         <scene sceneID="hjb-NG-zDK">
             <objects>
-                <viewController storyboardIdentifier="RegWashSettingsVC" id="Cj7-RB-o41" customClass="WashSettingsVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegWashSettingsVC" id="Cj7-RB-o41" customClass="WashSettingsViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uQR-ZI-yDk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1509,10 +1509,10 @@
             </objects>
             <point key="canvasLocation" x="2256.8000000000002" y="485.30734632683664"/>
         </scene>
-        <!--Custom SettingsVC-->
+        <!--Custom Settings View Controller-->
         <scene sceneID="Xpf-qV-UdF">
             <objects>
-                <viewController storyboardIdentifier="RegCustomSettingsVC" id="Q99-Ym-Oem" customClass="CustomSettingsVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegCustomSettingsVC" id="Q99-Ym-Oem" customClass="CustomSettingsViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OAU-fX-1Cj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2300,10 +2300,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="3135" y="485"/>
         </scene>
-        <!--Wash Setting ListVC-->
+        <!--Wash Setting List View Controller-->
         <scene sceneID="eKK-4R-1za">
             <objects>
-                <viewController storyboardIdentifier="RegWashSettingListVC" id="har-bK-fT7" customClass="WashSettingListVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegWashSettingListVC" id="har-bK-fT7" customClass="WashSettingListViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vIt-pF-96U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3007,10 +3007,10 @@ detergent</string>
             </objects>
             <point key="canvasLocation" x="2257" y="1225"/>
         </scene>
-        <!--Alert Pop ViewVC-->
+        <!--Alert Pop View View Controller-->
         <scene sceneID="DKN-4K-MTl">
             <objects>
-                <viewController storyboardIdentifier="AlertPopViewVC" id="lbe-A0-EYa" customClass="AlertPopViewVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertPopViewVC" id="lbe-A0-EYa" customClass="AlertPopViewViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I79-Mq-j6X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3093,10 +3093,10 @@ Let’s get started</string>
             </objects>
             <point key="canvasLocation" x="3010" y="1225"/>
         </scene>
-        <!--Add CardVC-->
+        <!--Add Card View Controller-->
         <scene sceneID="cfF-Me-3PL">
             <objects>
-                <viewController storyboardIdentifier="RegAddCardVC" id="eJA-34-3L5" customClass="AddCardVC" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegAddCardVC" id="eJA-34-3L5" customClass="AddCardViewController" customModule="iClean" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PSt-OG-HzI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3476,7 +3476,7 @@ Let’s get started</string>
     </scenes>
     <resources>
         <image name="Info" width="24" height="24"/>
-        <image name="back" width="10" height="17"/>
+        <image name="back" width="10" height="17.5"/>
         <image name="facebookLogoButton" width="50" height="50"/>
         <image name="googleLogoButton" width="50" height="50"/>
         <image name="iCleanLogoBlack" width="100" height="77"/>

@@ -82,7 +82,7 @@ class FAQViewController: BaseViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FaqTableViewCell") as? FaqTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.faqCell) as? FaqTableViewCell
         let faqObj = faqList[indexPath.row]
         
         cell?.faqTtitle.text = faqObj.question
