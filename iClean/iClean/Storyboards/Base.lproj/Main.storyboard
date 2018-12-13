@@ -1811,7 +1811,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZh-ca-RHC">
                                                     <rect key="frame" x="231" y="9" width="124" height="19.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="124" id="S4Q-I9-AP3"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="S4Q-I9-AP3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.87058823529999996" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1829,6 +1829,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xGa-k8-b16" firstAttribute="centerY" secondItem="2Ta-TS-3oq" secondAttribute="centerY" id="4UI-RZ-DnA"/>
+                                                <constraint firstItem="QZh-ca-RHC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pNI-8z-PH5" secondAttribute="trailing" constant="8" symbolic="YES" id="5ij-Jk-Ad6"/>
                                                 <constraint firstItem="am5-Yc-xiS" firstAttribute="leading" secondItem="2Ta-TS-3oq" secondAttribute="leading" constant="20" id="5rU-O7-BUF"/>
                                                 <constraint firstItem="afC-my-9qO" firstAttribute="top" secondItem="xGa-k8-b16" secondAttribute="bottom" constant="7.5" id="5wb-z7-vhm"/>
                                                 <constraint firstAttribute="trailing" secondItem="xGa-k8-b16" secondAttribute="trailing" constant="20" id="7WP-HI-FkB"/>
@@ -1838,6 +1839,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="QZh-ca-RHC" secondAttribute="trailing" constant="20" id="KrU-P9-Fsh"/>
                                                 <constraint firstAttribute="trailing" secondItem="afC-my-9qO" secondAttribute="trailing" constant="20" id="L64-zG-20G"/>
                                                 <constraint firstItem="am5-Yc-xiS" firstAttribute="top" secondItem="5j2-1j-dlh" secondAttribute="bottom" constant="10" id="eml-1o-BLA"/>
+                                                <constraint firstItem="pNI-8z-PH5" firstAttribute="top" secondItem="2Ta-TS-3oq" secondAttribute="top" constant="10" id="i6T-bu-TfE"/>
                                                 <constraint firstItem="5j2-1j-dlh" firstAttribute="top" secondItem="pNI-8z-PH5" secondAttribute="bottom" constant="8.5" id="oGb-LW-7A8"/>
                                                 <constraint firstItem="xGa-k8-b16" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5j2-1j-dlh" secondAttribute="trailing" constant="8" symbolic="YES" id="vgl-4e-E8i"/>
                                                 <constraint firstItem="xGa-k8-b16" firstAttribute="top" secondItem="QZh-ca-RHC" secondAttribute="bottom" constant="5.5" id="z0C-kJ-IWu"/>
@@ -2317,47 +2319,8 @@
                                                                         <outlet property="tipAmount" destination="kXf-mp-dw2" id="bPG-Qa-inl"/>
                                                                     </connections>
                                                                 </collectionViewCell>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="anu-xK-9Rq">
-                                                                    <rect key="frame" x="0.0" y="106" width="335" height="53"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="53"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                        <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qAf-jG-njU" customClass="ICImageView" customModule="iClean" customModuleProvider="target">
-                                                                                <rect key="frame" x="20" y="50" width="295" height="1"/>
-                                                                                <color key="backgroundColor" red="0.77149449479999999" green="0.77149449479999999" blue="0.77149449479999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="height" constant="1" id="c8g-fd-nC0"/>
-                                                                                </constraints>
-                                                                            </imageView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skn-PS-qJ7">
-                                                                                <rect key="frame" x="261" y="11" width="55" height="30"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                <state key="normal">
-                                                                                    <attributedString key="attributedTitle">
-                                                                                        <fragment content="Add Tip">
-                                                                                            <attributes>
-                                                                                                <color key="NSColor" red="0.29855488989637302" green="0.29855488989637302" blue="0.29855488989637302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                                                <font key="NSFont" size="15" name=".AppleSystemUIFontEmphasized"/>
-                                                                                                <font key="NSOriginalFont" size="15" name=".AppleSystemUIFontEmphasized"/>
-                                                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                                <integer key="NSUnderline" value="1"/>
-                                                                                            </attributes>
-                                                                                        </fragment>
-                                                                                    </attributedString>
-                                                                                </state>
-                                                                            </button>
-                                                                        </subviews>
-                                                                    </view>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="qAf-jG-njU" secondAttribute="trailing" constant="20" id="PgY-Bu-cSa"/>
-                                                                        <constraint firstItem="qAf-jG-njU" firstAttribute="leading" secondItem="anu-xK-9Rq" secondAttribute="leading" constant="20" id="Xvh-LB-ePs"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="qAf-jG-njU" secondAttribute="bottom" constant="2" id="w76-kX-geU"/>
-                                                                    </constraints>
-                                                                </collectionViewCell>
                                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemReceiptAmountCell" id="GRP-M2-2En" customClass="ItemReceiptAmountCell" customModule="iClean" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="159" width="335" height="110"/>
+                                                                    <rect key="frame" x="0.0" y="106" width="335" height="110"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
@@ -3778,7 +3741,7 @@ Earn Credit</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-vi-DRk">
                                         <rect key="frame" x="300" y="0.0" width="75" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="bmc-aA-vlZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="bmc-aA-vlZ"/>
                                             <constraint firstAttribute="height" constant="40" id="fbl-38-QGe"/>
                                         </constraints>
                                         <state key="normal" title="Done"/>
@@ -3790,7 +3753,7 @@ Earn Credit</string>
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="mlz-Wl-mQx"/>
-                                            <constraint firstAttribute="width" constant="72" id="tAf-gx-fck"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="tAf-gx-fck"/>
                                         </constraints>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -3803,6 +3766,7 @@ Earn Credit</string>
                                     <constraint firstItem="GJa-vi-DRk" firstAttribute="top" secondItem="Lvh-Yx-feN" secondAttribute="top" id="4Bk-mH-hs6"/>
                                     <constraint firstAttribute="bottom" secondItem="4CS-ay-7mP" secondAttribute="bottom" id="BwC-7r-ffj"/>
                                     <constraint firstAttribute="bottom" secondItem="RxG-Kz-1WO" secondAttribute="bottom" id="IWU-le-DAV"/>
+                                    <constraint firstItem="GJa-vi-DRk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q6L-D6-rD1" secondAttribute="trailing" constant="8" symbolic="YES" id="Ing-xL-yu8"/>
                                     <constraint firstItem="4CS-ay-7mP" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" id="JP1-Tp-oua"/>
                                     <constraint firstItem="RxG-Kz-1WO" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" id="K3E-PP-cT9"/>
                                     <constraint firstAttribute="height" constant="270" id="OI8-Wb-Ts4"/>

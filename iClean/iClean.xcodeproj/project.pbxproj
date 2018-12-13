@@ -24,6 +24,7 @@
 		171EBDE02191D588009A4692 /* DriverNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171EBDDF2191D588009A4692 /* DriverNetworkModel.swift */; };
 		171EDB3821A0F1D60004F057 /* ReviewCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171EDB3721A0F1D60004F057 /* ReviewCardCell.swift */; };
 		17212B1821C1D90F0020E7FD /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17212B1721C1D90F0020E7FD /* GeneralConstants.swift */; };
+		17212B1A21C1ECB30020E7FD /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = 17212B1921C1ECB30020E7FD /* ReadMe.md */; };
 		1722A63C218BDD1100EE5EEB /* ChangeEmailPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722A63B218BDD1100EE5EEB /* ChangeEmailPasswordViewController.swift */; };
 		1722A63E218BDE3600EE5EEB /* ChangeEmailPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722A63D218BDE3600EE5EEB /* ChangeEmailPasswordCell.swift */; };
 		17248F4A2171B6EA0016D639 /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17248F492171B6EA0016D639 /* GoogleManager.swift */; };
@@ -168,6 +169,7 @@
 		171EBDDF2191D588009A4692 /* DriverNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNetworkModel.swift; sourceTree = "<group>"; };
 		171EDB3721A0F1D60004F057 /* ReviewCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCardCell.swift; sourceTree = "<group>"; };
 		17212B1721C1D90F0020E7FD /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		17212B1921C1ECB30020E7FD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		1722A63B218BDD1100EE5EEB /* ChangeEmailPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailPasswordViewController.swift; sourceTree = "<group>"; };
 		1722A63D218BDE3600EE5EEB /* ChangeEmailPasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailPasswordCell.swift; sourceTree = "<group>"; };
 		17248F442171B6C70016D639 /* iClean-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iClean-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -347,7 +349,6 @@
 		171C27002176B24C004C2693 /* Add Cards */ = {
 			isa = PBXGroup;
 			children = (
-				172B4B2A218E0B1C00BC911A /* cells */,
 				171C27012176B278004C2693 /* AddCardViewController.swift */,
 				1752923C2187509000C77FDF /* CardListViewController.swift */,
 			);
@@ -375,34 +376,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		171CF798218D3071005320B8 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				17260CAA218B416F0003360F /* OrderHistoryCell.swift */,
-				171CF799218D380B005320B8 /* OrderPickupCell.swift */,
-				171CF79B218D3838005320B8 /* OrderPromoCell.swift */,
-				171CF7AA218DA16A005320B8 /* OrderConfirmationPickupCell.swift */,
-				171CF7AC218DA242005320B8 /* OrderConfirmationCell.swift */,
-				17263859218E908800C5F7D8 /* OrderDetailsCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		171CF7A5218D7BD0005320B8 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
 				171CF7A6218D7BE9005320B8 /* PickerViewController.swift */,
 			);
 			path = PickerView;
-			sourceTree = "<group>";
-		};
-		171EDB3621A0F1A90004F057 /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				171EDB3721A0F1D60004F057 /* ReviewCardCell.swift */,
-				173E9B7021B209CA0073D2B2 /* ReviewTipsCell.swift */,
-			);
-			path = cells;
 			sourceTree = "<group>";
 		};
 		17212B1621C1D8EA0020E7FD /* Misc */ = {
@@ -509,20 +488,9 @@
 			isa = PBXGroup;
 			children = (
 				1725260921762A860094B3DD /* AddLocationViewController.swift */,
-				1725260E21762C180094B3DD /* Cells */,
 				17E5A9A7218547210043A86A /* LocationListViewController.swift */,
 			);
 			path = "Add Location";
-			sourceTree = "<group>";
-		};
-		1725260E21762C180094B3DD /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				1725260C21762C110094B3DD /* LocationInfoCell.swift */,
-				1725260F21762C320094B3DD /* LocationStateCell.swift */,
-				17E5A9A9218549130043A86A /* LocationlistCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		17260C96218B06A30003360F /* Contacts */ = {
@@ -553,7 +521,6 @@
 		17260CA7218B3D970003360F /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				171CF798218D3071005320B8 /* Cell */,
 				17260CA8218B3DBD0003360F /* OrderHistoryViewController.swift */,
 				171CF796218D3057005320B8 /* OrderViewController.swift */,
 				171CF7A8218DA0DC005320B8 /* OrderConfirmationViewController.swift */,
@@ -568,22 +535,10 @@
 		1726385F218EF93900C5F7D8 /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
-				17263866218FCE0800C5F7D8 /* Cells */,
 				17263860218EF96B00C5F7D8 /* ReceiptViewController.swift */,
 				17263862218EF9C200C5F7D8 /* TipsViewController.swift */,
 			);
 			path = Receipt;
-			sourceTree = "<group>";
-		};
-		17263866218FCE0800C5F7D8 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				17263867218FCE4000C5F7D8 /* OrderReceiptCell.swift */,
-				17263869218FCF2D00C5F7D8 /* ItemReceiptCell.swift */,
-				1726386B218FCF9A00C5F7D8 /* ItemReceiptTipCell.swift */,
-				1726386D218FD01100C5F7D8 /* ItemReceiptAmountCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		17276F7E217AF94F0050EA2C /* AlertPopView */ = {
@@ -598,39 +553,22 @@
 			isa = PBXGroup;
 			children = (
 				17276F82217B27400050EA2C /* HomeViewController.swift */,
-				17276F84217B27620050EA2C /* Cells */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		17276F84217B27620050EA2C /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				17276F85217B277E0050EA2C /* HomeCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		17276F87217B2FCD0050EA2C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				17276F8A217B2FF90050EA2C /* Cell */,
 				17276F8D217B301A0050EA2C /* MenuViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		17276F8A217B2FF90050EA2C /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				17276F8B217B2FF90050EA2C /* MenuCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		172771AC214E5C5F00A2C6F5 = {
 			isa = PBXGroup;
 			children = (
+				17212B1921C1ECB30020E7FD /* ReadMe.md */,
 				172771B7214E5C5F00A2C6F5 /* iClean */,
 				172771B6214E5C5F00A2C6F5 /* Products */,
 				17B96273215F2DF100A4E454 /* Frameworks */,
@@ -754,14 +692,6 @@
 			path = "Braintree Apis";
 			sourceTree = "<group>";
 		};
-		172B4B2A218E0B1C00BC911A /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				172B4B2B218E0B3600BC911A /* CardCell.swift */,
-			);
-			path = cells;
-			sourceTree = "<group>";
-		};
 		172D7DA9219261B8009C0EB2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,58 +707,30 @@
 			children = (
 				1737E690217772A9002368D3 /* WashSettingsViewController.swift */,
 				17CA03A92178B48C008CA0C4 /* WashSettingListViewController.swift */,
-				1737E692217772FD002368D3 /* cells */,
 				1749B6E12185BD1E0030DB15 /* HomeWashSettingViewController.swift */,
 			);
 			path = "Wash Settings ";
-			sourceTree = "<group>";
-		};
-		1737E692217772FD002368D3 /* cells */ = {
-			isa = PBXGroup;
-			children = (
-				1737E6932177731D002368D3 /* WashSettingsCell.swift */,
-			);
-			path = cells;
 			sourceTree = "<group>";
 		};
 		1751A8D62178A71F00184E0A /* Custom Setting */ = {
 			isa = PBXGroup;
 			children = (
 				1751A8D72178A74900184E0A /* CustomSettingsViewController.swift */,
-				1751A8D92178A78D00184E0A /* Cells */,
 			);
 			path = "Custom Setting";
-			sourceTree = "<group>";
-		};
-		1751A8D92178A78D00184E0A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				1751A8DA2178A7B100184E0A /* CustomSettingCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		17806B89217CCAC6009D90D0 /* PhoneVerification */ = {
 			isa = PBXGroup;
 			children = (
-				17806B8A217CCAD8009D90D0 /* Cell */,
 				17252607217620BF0094B3DD /* LoginPhoneVerificationViewController.swift */,
 			);
 			path = PhoneVerification;
 			sourceTree = "<group>";
 		};
-		17806B8A217CCAD8009D90D0 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				17806B8B217CCB03009D90D0 /* phoneVerificationCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		179F18FE2190955A00D811B4 /* Review */ = {
 			isa = PBXGroup;
 			children = (
-				171EDB3621A0F1A90004F057 /* cells */,
 				179F18FF2190957000D811B4 /* ReviewViewController.swift */,
 				179F1901219095C100D811B4 /* WriteReviewViewController.swift */,
 			);
@@ -838,6 +740,27 @@
 		17B96270215F1EAA00A4E454 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				17263867218FCE4000C5F7D8 /* OrderReceiptCell.swift */,
+				17263869218FCF2D00C5F7D8 /* ItemReceiptCell.swift */,
+				1726386B218FCF9A00C5F7D8 /* ItemReceiptTipCell.swift */,
+				1726386D218FD01100C5F7D8 /* ItemReceiptAmountCell.swift */,
+				17260CAA218B416F0003360F /* OrderHistoryCell.swift */,
+				171CF799218D380B005320B8 /* OrderPickupCell.swift */,
+				171CF79B218D3838005320B8 /* OrderPromoCell.swift */,
+				17276F8B217B2FF90050EA2C /* MenuCell.swift */,
+				17276F85217B277E0050EA2C /* HomeCell.swift */,
+				171CF7AA218DA16A005320B8 /* OrderConfirmationPickupCell.swift */,
+				171CF7AC218DA242005320B8 /* OrderConfirmationCell.swift */,
+				17263859218E908800C5F7D8 /* OrderDetailsCell.swift */,
+				172B4B2B218E0B3600BC911A /* CardCell.swift */,
+				1737E6932177731D002368D3 /* WashSettingsCell.swift */,
+				1725260C21762C110094B3DD /* LocationInfoCell.swift */,
+				1725260F21762C320094B3DD /* LocationStateCell.swift */,
+				17E5A9A9218549130043A86A /* LocationlistCell.swift */,
+				17806B8B217CCB03009D90D0 /* phoneVerificationCell.swift */,
+				1751A8DA2178A7B100184E0A /* CustomSettingCell.swift */,
+				171EDB3721A0F1D60004F057 /* ReviewCardCell.swift */,
+				173E9B7021B209CA0073D2B2 /* ReviewTipsCell.swift */,
 				17B96271215F1EC800A4E454 /* RegisterCell.swift */,
 			);
 			path = Cells;
@@ -948,6 +871,7 @@
 				172771C3214E5C6000A2C6F5 /* LaunchScreen.storyboard in Resources */,
 				172771C0214E5C6000A2C6F5 /* Assets.xcassets in Resources */,
 				1717750E219115330006F484 /* Driver.storyboard in Resources */,
+				17212B1A21C1ECB30020E7FD /* ReadMe.md in Resources */,
 				172771BE214E5C5F00A2C6F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

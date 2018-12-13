@@ -9,16 +9,16 @@
 import UIKit
 
 class BraintreeNetworkModel: ApiNetwork {
-
-    func fetchBrainTreeToken(handler : @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
+    
+    func fetchBrainTreeToken(handler: @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
         get("user/get-client-token/", completed: handler)
     }
     
-    func addCard(_ nonce : String,_ handler : @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
+    func addCard(_ nonce: String,_ handler: @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
         post(["nonce": nonce as AnyObject], path: "user/add-card/", postCompleted: handler)
     }
     
-    func getAllCards(handler : @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
+    func getAllCards(handler: @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
         get("user/get-cards/", completed: handler)
     }
     

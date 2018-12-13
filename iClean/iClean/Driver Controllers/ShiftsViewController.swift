@@ -9,7 +9,7 @@
 import UIKit
 
 class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var nextCustomerBtn: UIButton!
     @IBOutlet weak var tableview: UITableView!
@@ -22,14 +22,14 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     fileprivate var shiftList: [Shifts]? = []
     fileprivate let refreshControl = UIRefreshControl()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.refreshControl.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
+        self.refreshControl.addTarget(self, action: #selector(fetchOrders), for: .valueChanged)
         self.tableview.insertSubview(self.refreshControl, at: 0)
-
+        
         tableview.tableFooterView = UIView()
     }
     
@@ -55,7 +55,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                 
                 strongSelf.hideLoadSpinner()
                 strongSelf.refreshControl.endRefreshing()
-
+                
                 if success {
                     
                     let message = response?["message"] as? String
@@ -75,7 +75,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                         if let innerData = response?["data"] as? [String: AnyObject] {
                             
                             for keys in innerData.keys {
-                               
+                                
                                 if let list = innerData[keys] as? [String : AnyObject] {
                                     
                                     for key in list.keys {
@@ -91,7 +91,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                                         strongSelf.shiftList?.append(shift)
                                     }
                                     
-                                  
+                                    
                                 }
                             }
                             
@@ -99,7 +99,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                                 
                                 guard let fName = obj1.shiftDate else { return false }
                                 guard let sName = obj2.shiftDate else { return true }
-
+                                
                                 return fName < sName
                             })
                             
@@ -110,12 +110,12 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                         }
                     } else {
                         strongSelf.presentAlert(title: nil, message: message ?? "Api error")
-
+                        
                     }
                 } else {
                     
                     strongSelf.presentAlert(title: nil, message: error?.localizedDescription ?? "Network error")
-
+                    
                 }
             })
         }
@@ -166,7 +166,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
         cell?.backgroundColor = creamWhiteColor
         cell?.textLabel?.textColor = UIColor.black
         cell?.detailTextLabel?.textColor = UIColor.black
-
+        
         let orderInfo = shiftList?[indexPath.section].list[indexPath.row]
         
         cell?.detailTextLabel?.text = "#\(orderInfo?.ordInfo?.uid ?? "") - \(orderInfo?.typeStr?.capitalized ?? "")"
@@ -177,7 +177,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
             cell?.backgroundColor = lightGreenColor
             cell?.textLabel?.textColor = UIColor.white
             cell?.detailTextLabel?.textColor = UIColor.white
-
+            
         }
         
         return cell!
@@ -191,5 +191,5 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
         
     }
     
-
+    
 }

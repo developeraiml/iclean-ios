@@ -16,5 +16,5 @@ struct UserInput {
     var returnType: UIReturnKeyType
     
     var isSecured: Bool = false
-
+    
 }

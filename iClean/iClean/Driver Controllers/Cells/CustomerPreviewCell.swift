@@ -19,6 +19,5 @@ class CustomerPreviewCell: UICollectionViewCell {
     
     @IBOutlet weak var specialNotes: UITextView!
     
-    
     @IBOutlet weak var letThemKnowBtn: UIButton!
 }

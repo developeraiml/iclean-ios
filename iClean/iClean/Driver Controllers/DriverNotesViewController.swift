@@ -9,14 +9,14 @@
 import UIKit
 
 class DriverNotesViewController: UIViewController, UITextViewDelegate {
-
+    
     @IBOutlet weak var placeHolder: UILabel!
     @IBOutlet weak var noteView: UITextView!
     
     var handler : ((_ noteText : String)->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -30,11 +30,11 @@ class DriverNotesViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func OkayAction(_ sender: Any) {
         view.endEditing(true)
-
+        
         if let handler = handler {
             handler(noteView.text)
         }
-     
+        
     }
     
     

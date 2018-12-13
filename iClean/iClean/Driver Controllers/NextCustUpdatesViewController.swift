@@ -17,7 +17,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         if order?.type == .OrderPickup {
@@ -36,7 +36,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
         } else {
             updateDropOffDriverStatusInfo()
         }
-       
+        
     }
     
     fileprivate func updateDropOffDriverStatusInfo() {
@@ -57,19 +57,19 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
     fileprivate func updatePickUpDriverStatusInfo() {
         
         switch order?.ordInfo?.pickupDriverStatus {
-        
+            
         case .GetDirection?:
-             self.collectionview.scrollToItem(at: IndexPath(item: 1, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
+            self.collectionview.scrollToItem(at: IndexPath(item: 1, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
         case .LetThemKnow?:
             self.collectionview.scrollToItem(at: IndexPath(item: 2, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
         case .OrderPicked?:
-             self.collectionview.scrollToItem(at: IndexPath(item: 2, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
+            self.collectionview.scrollToItem(at: IndexPath(item: 2, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: false)
         default:
             break
         }
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -82,7 +82,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             
             cell?.customerName.text = order?.customer?.name
             cell?.address.text = order?.address?.address_1
-
+            
             if order?.type == .OrderPickup {
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.pickupDriverInst
@@ -129,13 +129,13 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
                 cell?.bottmTextLbl.text = "Were you able to drop-off the order?"
-
+                
             }
             
             
             cell?.noButton.addTarget(self, action: #selector(noPickAction), for: .touchUpInside)
             cell?.yesButton.addTarget(self, action: #selector(yesPickAction), for: .touchUpInside)
-
+            
             return cell!
         }
     }
@@ -143,7 +143,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
-
+    
 }
 
 extension NextCustUpdatesViewController {
@@ -164,14 +164,14 @@ extension NextCustUpdatesViewController {
             })
         })
         
-       
+        
     }
     
     @objc func getCustomerDirection() {
         
-          var parameters = ["pickup_driver_status": "driver_got_directions"] as [String : AnyObject]
+        var parameters = ["pickup_driver_status": "driver_got_directions"] as [String : AnyObject]
         
-         if self.order?.type == .DropOff {
+        if self.order?.type == .DropOff {
             parameters = ["drop_off_driver_status": "driver_got_directions"] as [String : AnyObject]
         }
         
@@ -183,7 +183,7 @@ extension NextCustUpdatesViewController {
                     strongSelf.collectionview.scrollToItem(at: IndexPath(item: 1, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
                 })
             }
-           
+            
         })
     }
     
@@ -193,10 +193,10 @@ extension NextCustUpdatesViewController {
         
         vc?.handler = {[weak self] notes in
             
-             var parameters = ["drop_off_driver_status": "driver_not_able_to_dropoff",
-                               "notes_by_drop_off_driver": notes.encodeEmoji] as [String : AnyObject]
+            var parameters = ["drop_off_driver_status": "driver_not_able_to_dropoff",
+                              "notes_by_drop_off_driver": notes.encodeEmoji] as [String : AnyObject]
             
-             if self?.order?.type == .OrderPickup {
+            if self?.order?.type == .OrderPickup {
                 parameters = ["pickup_driver_status": "driver_not_able_to_pickup",
                               "notes_by_pickup_driver" : notes.encodeEmoji] as [String : AnyObject]
             }
@@ -220,9 +220,9 @@ extension NextCustUpdatesViewController {
         
         var parameters = ["drop_off_driver_status": "driver_dropped_off_order"] as [String : AnyObject]
         
-         if self.order?.type == .OrderPickup {
+        if self.order?.type == .OrderPickup {
             parameters = ["pickup_driver_status": "driver_picked_up_order"] as [String : AnyObject]
-
+            
         }
         
         self.updateOrderStatus(dict: parameters , orderId: order?.ordInfo?.uid ?? "", handler: { [weak self] status in
@@ -261,10 +261,10 @@ extension NextCustUpdatesViewController {
     fileprivate func updateOrderStatus(dict : [String : AnyObject], orderId: String, handler: ((Bool)-> Void)?) {
         
         showLoadSpinner(message: "Updating Orders ...")
-
+        
         let api = DriverNetworkModel()
         api.updateOrderStatus(param: dict, orderId: orderId) { (success, response, error) in
-                        
+            
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
@@ -293,7 +293,7 @@ extension NextCustUpdatesViewController {
                         if let handler = handler {
                             handler(false)
                         }
-                    
+                        
                     }
                 } else {
                     if let handler = handler {
@@ -301,7 +301,7 @@ extension NextCustUpdatesViewController {
                     }
                     
                     strongSelf.presentAlert(title: nil, message: error?.localizedDescription ?? "Network error")
-
+                    
                 }
                 
             })

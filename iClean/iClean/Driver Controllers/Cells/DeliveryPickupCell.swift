@@ -20,7 +20,6 @@ class DeliveryPickupCell: UICollectionViewCell {
     
     @IBOutlet weak var makeCallBtn: ICButton!
     
-    
     @IBOutlet weak var bottmTextLbl: UILabel!
     
     @IBOutlet weak var noButton: UIButton!

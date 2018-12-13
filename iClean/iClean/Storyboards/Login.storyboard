@@ -1315,8 +1315,8 @@
                                                                 <constraint firstAttribute="bottom" secondItem="PBy-Sk-cb4" secondAttribute="bottom" constant="16" id="nOz-af-yXg"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-h9-uyy">
-                                                            <rect key="frame" x="26" y="4" width="217" height="68"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-h9-uyy">
+                                                            <rect key="frame" x="8" y="4" width="205" height="68"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="iClean Recommended Wash">
                                                                     <attributes>
