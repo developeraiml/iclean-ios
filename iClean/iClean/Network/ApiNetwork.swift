@@ -97,9 +97,12 @@ class ApiNetwork: NSObject, URLSessionDelegate {
         
         let task = session.dataTask(with: request, completionHandler: { (data : Data?, response : URLResponse?, error : Error?) in
             
-//            let dataString = String(data: data!, encoding: String.Encoding.utf8)
-//
-//            print(dataString)
+//            if data != nil {
+//                let dataString = String(data: data!, encoding: String.Encoding.utf8)
+//                
+//                print(dataString)
+//            }
+           
             
            guard error == nil else {
             postCompleted(false, nil, error as NSError?)

@@ -80,6 +80,7 @@ class LoginBaseViewController: BaseViewController {
         
         if FBSDKAccessToken.current() != nil {
             //Fetch User Info
+            getFBUserInfo()
             return
         }
         

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var currentAuthorizationFlow : OIDAuthorizationFlowSession?
     fileprivate var reachability : Reachability!
-    var devicePushNotificationToken : String? = ""
+    var devicePushNotificationToken : String? = "154398FED52E94B41253C4A5D0BE2C287D41CE75A0C703CDA304BB0EC02BC722"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
