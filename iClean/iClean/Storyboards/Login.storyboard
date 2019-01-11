@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHn-IM-IfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHn-IM-IfL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -505,7 +505,6 @@
                                                     </constraints>
                                                     <state key="selected" image="tickActive"/>
                                                     <connections>
-                                                        <action selector="TermsConditionStatusAction:" destination="vH8-Ax-qGe" eventType="touchUpInside" id="6SP-3h-yQf"/>
                                                         <action selector="checkButtonAction:" destination="vH8-Ax-qGe" eventType="touchUpInside" id="59p-wN-wFr"/>
                                                     </connections>
                                                 </button>
@@ -555,6 +554,9 @@
                                                     </fragment>
                                                 </attributedString>
                                             </state>
+                                            <connections>
+                                                <action selector="TermsConditionStatusAction:" destination="vH8-Ax-qGe" eventType="touchUpInside" id="mQh-Jh-9XY"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YyJ-en-a80" customClass="ICButton" customModule="iClean" customModuleProvider="target">
                                             <rect key="frame" x="39.5" y="50" width="296" height="50"/>

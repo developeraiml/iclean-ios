@@ -147,6 +147,10 @@ class RegisterViewController: LoginBaseViewController {
     }
     
     @IBAction func TermsConditionStatusAction(_ sender: Any) {
+        //https://www.joiniclean.com
+        let url = URL(string: "https://www.joiniclean.com")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+
     }
     
     
