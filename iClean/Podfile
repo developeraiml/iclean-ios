@@ -7,4 +7,7 @@ target 'iClean' do
 
   # Pods for iClean
   pod 'BraintreeDropIn'
+  pod 'Firebase/Core'
+  
+  
 end

@@ -55,7 +55,7 @@ class BaseViewController: UIViewController {
     func presentAlert(title: String?, message : String) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            
+
             let alert = UIAlertController(title: title ?? "iClean", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -73,6 +73,7 @@ class BaseViewController: UIViewController {
     }
     
     func presentAlertOKCancel(title: String?, message : String, completion: ((Bool)->Void)?) {
+        
         
         let alert = UIAlertController(title: title ?? "iClean", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
@@ -165,27 +166,40 @@ class BaseViewController: UIViewController {
     
     func showLoadSpinner(message : String?) {
         
-        hideLoadSpinner()
+       let hud = MBProgressHUD.showAdded(to: view, animated: true)
         
-        let alertVC = UIAlertController(title: nil, message: message ?? "Please wait ...", preferredStyle: .alert)
-        
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .gray
-        loadingIndicator.startAnimating();
-        
-        alertVC.view.addSubview(loadingIndicator)
-        
-        self.alert = alertVC
-        
-        present(alertVC, animated: true, completion: nil)
+        if message != nil {
+           hud.label.text = message
+        }
+
+//        DispatchQueue.main.async {
+//            self.hideLoadSpinner()
+//
+//            let alertVC = UIAlertController(title: nil, message: message ?? "Please wait ...", preferredStyle: .alert)
+//
+//            let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+//            loadingIndicator.hidesWhenStopped = true
+//            loadingIndicator.style = .gray
+//            loadingIndicator.startAnimating();
+//
+//            alertVC.view.addSubview(loadingIndicator)
+//
+//            self.alert = alertVC
+//
+//            self.present(alertVC, animated: true, completion: nil)
+//        }
+
     }
     
     func hideLoadSpinner() {
         
-        if self.alert != nil {
-            self.alert?.dismiss(animated: false, completion: nil)
-            self.alert = nil
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+            // your code here
+            MBProgressHUD.hide(for: self.view, animated: true)
+//            if self.alert != nil {
+//                self.alert?.dismiss(animated: false, completion: nil)
+//                self.alert = nil
+//            }
         }
     }
 

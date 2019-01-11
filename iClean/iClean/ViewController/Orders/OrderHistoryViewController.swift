@@ -41,7 +41,6 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
     
     @objc fileprivate func refetchOrderHistory() {
         offset = 0
-        orderList.removeAll()
         fetchOrderHistory()
     }
     
@@ -56,6 +55,9 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
+                if strongSelf.offset == 0 {
+                    strongSelf.orderList.removeAll()
+                }
                 strongSelf.hideLoadSpinner()
                 strongSelf.refreshControl.endRefreshing()
 
@@ -104,8 +106,9 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
                 } else {
                     
                     strongSelf.presentAlert(title: nil, message: error?.localizedDescription ?? "Network error")
-                    
                 }
+                
+
             })
         }
     }
@@ -120,21 +123,21 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.orderHistoryCell) as? OrderHistoryCell
-        let order = self.orderList[indexPath.row]
         
-        cell?.dateLabel.text = order.dropOffDate
+        let ord = self.orderList[indexPath.row]
+        cell?.dateLabel.text = ord.dropOffDate
         
-        if order.ordStatus != .Delivery {
+        if ord.ordStatus != .Delivery {
             cell = tableView.dequeueReusableCell(withIdentifier: "OrderHistoryCell1") as? OrderHistoryCell
             
-            cell?.amountLabel.text = "#\(order.uid ?? "") - \(order.status ?? "")"
-            cell?.dateLabel.text = order.pickupDate
+            cell?.amountLabel.text = "#\(ord.uid ?? "") - \(ord.status ?? "")"
+            cell?.dateLabel.text = ord.pickupDate
         } else {
-            cell?.updateRating(rating: order.rating)
-            cell?.amountLabel.text = "$\(order.orderCost ?? 0)"
+            cell?.updateRating(rating: ord.rating)
+            cell?.amountLabel.text = "$\(ord.orderCost ?? 0)"
         }
         
-        cell?.historyDesc.text = order.serviceNotes
+        cell?.historyDesc.text = ord.serviceNotes
         
         if indexPath.row >= (orderList.count - 2) && loadMore == true {
             loadMore = false

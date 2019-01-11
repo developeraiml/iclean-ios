@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class OrderConfirmationViewController: BaseViewController, UITableViewDataSource,UITableViewDelegate {
 
@@ -64,6 +66,8 @@ class OrderConfirmationViewController: BaseViewController, UITableViewDataSource
         
         showLoadSpinner(message: "Placing Order ...")
         
+        //Analytics.logEvent("Place_order", parameters: param)
+        
         let api = OrderNetworkModel()
         api.palceOrder(param!) { [weak self] (success, response, error) in
                         
@@ -76,10 +80,13 @@ class OrderConfirmationViewController: BaseViewController, UITableViewDataSource
                 strongSelf.confirmBtn.alpha = 1.0
                 
                 if success {
-                    
+
                     let message = response?["message"] as? String
                     if response?["status"] as? Int == 401 {
                         
+                        Analytics.logEvent("Order_Status", parameters: (["Order_Res": "failed"]))
+
+
                         strongSelf.presentAlert(title: nil, message: "Something went worng", completion: { (status) in
                             if let appDel = UIApplication.shared.delegate as? AppDelegate {
                                 appDel.switchToLogin()
@@ -88,6 +95,9 @@ class OrderConfirmationViewController: BaseViewController, UITableViewDataSource
                         
                     } else if response?["status"] as? Int == 201 {
                         
+                        Analytics.logEvent("Order_Status", parameters: (["Order_Res": "Success"]))
+
+
                         if let innerData = response?["data"] as? [String: AnyObject] {
                             
                             let ord = order(with: innerData)
@@ -95,6 +105,8 @@ class OrderConfirmationViewController: BaseViewController, UITableViewDataSource
                         }
                     } else {
                         
+                        Analytics.logEvent("Order_Status", parameters: (["Order_Res": "server or Api thrown error"]))
+
                         if let innerData = response?["data"] as? [String: AnyObject] {
                             
                             if let err = innerData["errors"] as? [AnyObject] {
@@ -107,6 +119,10 @@ class OrderConfirmationViewController: BaseViewController, UITableViewDataSource
                     }
                     
                 } else {
+                    
+                    Analytics.logEvent("Order_Status", parameters: (["Order_Res": "Network error"]))
+
+
                     strongSelf.presentAlert(title: nil, message: error?.localizedDescription ?? "Network error")
 
                 }

@@ -107,6 +107,7 @@
 		172D7DAD219262AB009C0EB2 /* GetDirectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DAC219262AB009C0EB2 /* GetDirectionCell.swift */; };
 		172D7DAF21926366009C0EB2 /* DeliveryPickupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DAE21926366009C0EB2 /* DeliveryPickupCell.swift */; };
 		172D7DB1219266B4009C0EB2 /* DriverNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DB0219266B4009C0EB2 /* DriverNotesViewController.swift */; };
+		1733D03921E7813600F3EA16 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733D03821E7813600F3EA16 /* iAd.framework */; };
 		1737E68E21776FF7002368D3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737E68D21776FF7002368D3 /* StringExtension.swift */; };
 		1737E691217772A9002368D3 /* WashSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737E690217772A9002368D3 /* WashSettingsViewController.swift */; };
 		1737E6942177731D002368D3 /* WashSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737E6932177731D002368D3 /* WashSettingsCell.swift */; };
@@ -119,6 +120,7 @@
 		1751A8D82178A74900184E0A /* CustomSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751A8D72178A74900184E0A /* CustomSettingsViewController.swift */; };
 		1751A8DB2178A7B100184E0A /* CustomSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751A8DA2178A7B100184E0A /* CustomSettingCell.swift */; };
 		1752923D2187509000C77FDF /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1752923C2187509000C77FDF /* CardListViewController.swift */; };
+		176D95AA21E8A3290086A3C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 176D95A921E8A3290086A3C2 /* GoogleService-Info.plist */; };
 		17784C25217E0DB800F2C861 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17784C24217E0DB800F2C861 /* ForgotViewController.swift */; };
 		177D3B78217975F300451612 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B77217975F300451612 /* CustomTextView.swift */; };
 		177D3B7A217978EC00451612 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D3B79217978EC00451612 /* BaseViewController.swift */; };
@@ -138,6 +140,7 @@
 		17B9628B215F471F00A4E454 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B96289215F471F00A4E454 /* AlertController.swift */; };
 		17B9628C215F471F00A4E454 /* AlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B9628A215F471F00A4E454 /* AlertController.xib */; };
 		17BE8D9A214F591300EDD289 /* iCleanColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE8D99214F591300EDD289 /* iCleanColor.swift */; };
+		17C9148821E8AF5600C51BD5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9148721E8AF5600C51BD5 /* MBProgressHUD.m */; };
 		17CA03AA2178B48C008CA0C4 /* WashSettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA03A92178B48C008CA0C4 /* WashSettingListViewController.swift */; };
 		17DD8841217F791D0035C038 /* LocationNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DD8840217F791D0035C038 /* LocationNetworkModel.swift */; };
 		17E155CC2192AF03006EDFA4 /* Shifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E155CB2192AF03006EDFA4 /* Shifts.swift */; };
@@ -284,6 +287,7 @@
 		172D7DAC219262AB009C0EB2 /* GetDirectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionCell.swift; sourceTree = "<group>"; };
 		172D7DAE21926366009C0EB2 /* DeliveryPickupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPickupCell.swift; sourceTree = "<group>"; };
 		172D7DB0219266B4009C0EB2 /* DriverNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNotesViewController.swift; sourceTree = "<group>"; };
+		1733D03821E7813600F3EA16 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1737E68D21776FF7002368D3 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1737E690217772A9002368D3 /* WashSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSettingsViewController.swift; sourceTree = "<group>"; };
 		1737E6932177731D002368D3 /* WashSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSettingsCell.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		1751A8D72178A74900184E0A /* CustomSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingsViewController.swift; sourceTree = "<group>"; };
 		1751A8DA2178A7B100184E0A /* CustomSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingCell.swift; sourceTree = "<group>"; };
 		1752923C2187509000C77FDF /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
+		176D95A921E8A3290086A3C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17784C24217E0DB800F2C861 /* ForgotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotViewController.swift; sourceTree = "<group>"; };
 		177D3B77217975F300451612 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		177D3B79217978EC00451612 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +320,8 @@
 		17B96289215F471F00A4E454 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		17B9628A215F471F00A4E454 /* AlertController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertController.xib; sourceTree = "<group>"; };
 		17BE8D99214F591300EDD289 /* iCleanColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCleanColor.swift; sourceTree = "<group>"; };
+		17C9148621E8AF5600C51BD5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		17C9148721E8AF5600C51BD5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		17CA03A92178B48C008CA0C4 /* WashSettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSettingListViewController.swift; sourceTree = "<group>"; };
 		17DD8840217F791D0035C038 /* LocationNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNetworkModel.swift; sourceTree = "<group>"; };
 		17E155CB2192AF03006EDFA4 /* Shifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shifts.swift; sourceTree = "<group>"; };
@@ -335,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1733D03921E7813600F3EA16 /* iAd.framework in Frameworks */,
 				17B96288215F356D00A4E454 /* StoreKit.framework in Frameworks */,
 				17B96275215F2DF200A4E454 /* Social.framework in Frameworks */,
 				17B96285215F33DD00A4E454 /* FBSDKCoreKit.framework in Frameworks */,
@@ -387,6 +395,7 @@
 		17212B1621C1D8EA0020E7FD /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				17C9148521E8AF3900C51BD5 /* Hud */,
 				17212B1721C1D90F0020E7FD /* GeneralConstants.swift */,
 			);
 			path = Misc;
@@ -606,6 +615,7 @@
 				172771BF214E5C6000A2C6F5 /* Assets.xcassets */,
 				172771C1214E5C6000A2C6F5 /* LaunchScreen.storyboard */,
 				172771C4214E5C6000A2C6F5 /* Info.plist */,
+				176D95A921E8A3290086A3C2 /* GoogleService-Info.plist */,
 				17248F442171B6C70016D639 /* iClean-Bridging-Header.h */,
 			);
 			path = iClean;
@@ -769,6 +779,7 @@
 		17B96273215F2DF100A4E454 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1733D03821E7813600F3EA16 /* iAd.framework */,
 				17B96287215F356D00A4E454 /* StoreKit.framework */,
 				17B96283215F33DD00A4E454 /* FBSDKCoreKit.framework */,
 				17B96284215F33DD00A4E454 /* FBSDKLoginKit.framework */,
@@ -789,6 +800,15 @@
 				1737E68D21776FF7002368D3 /* StringExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		17C9148521E8AF3900C51BD5 /* Hud */ = {
+			isa = PBXGroup;
+			children = (
+				17C9148621E8AF5600C51BD5 /* MBProgressHUD.h */,
+				17C9148721E8AF5600C51BD5 /* MBProgressHUD.m */,
+			);
+			path = Hud;
 			sourceTree = "<group>";
 		};
 		BBEA3EC63E70348F2C8EC16B /* Pods */ = {
@@ -867,6 +887,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				172771CF214E5CD900A2C6F5 /* Login.storyboard in Resources */,
+				176D95AA21E8A3290086A3C2 /* GoogleService-Info.plist in Resources */,
 				17B9628C215F471F00A4E454 /* AlertController.xib in Resources */,
 				172771C3214E5C6000A2C6F5 /* LaunchScreen.storyboard in Resources */,
 				172771C0214E5C6000A2C6F5 /* Assets.xcassets in Resources */,
@@ -888,11 +909,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iClean/Pods-iClean-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Braintree/Braintree.framework",
 				"${BUILT_PRODUCTS_DIR}/BraintreeDropIn/BraintreeDropIn.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Braintree.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BraintreeDropIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -959,6 +984,7 @@
 				17263863218EF9C200C5F7D8 /* TipsViewController.swift in Sources */,
 				172D7DA8219260CE009C0EB2 /* NextCustUpdatesViewController.swift in Sources */,
 				17248F942171B6F70016D639 /* OIDTokenUtilities.m in Sources */,
+				17C9148821E8AF5600C51BD5 /* MBProgressHUD.m in Sources */,
 				172771D6214E5EE700A2C6F5 /* ICButton.swift in Sources */,
 				17806B92217CDFC5009D90D0 /* DictionaryExtension.swift in Sources */,
 				171CF7A4218D6D33005320B8 /* newOrder.swift in Sources */,

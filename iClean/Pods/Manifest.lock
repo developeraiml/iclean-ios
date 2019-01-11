@@ -1,44 +1,112 @@
 PODS:
-  - Braintree/Card (4.19.0):
+  - Braintree/Card (4.21.0):
     - Braintree/Core
-  - Braintree/Core (4.19.0)
-  - Braintree/PaymentFlow (4.19.0):
+  - Braintree/Core (4.21.0)
+  - Braintree/PaymentFlow (4.21.0):
     - Braintree/Card
     - Braintree/Core
     - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.19.0):
+  - Braintree/PayPal (4.21.0):
+    - Braintree/Core
+    - Braintree/PayPalOneTouch
+  - Braintree/PayPalDataCollector (4.21.0):
     - Braintree/Core
     - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.19.0):
+  - Braintree/PayPalOneTouch (4.21.0):
     - Braintree/Core
     - Braintree/PayPalDataCollector
     - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.19.0)
-  - Braintree/UnionPay (4.19.0):
+  - Braintree/PayPalUtils (4.21.0)
+  - Braintree/UnionPay (4.21.0):
     - Braintree/Card
     - Braintree/Core
-  - BraintreeDropIn (6.5.0):
-    - BraintreeDropIn/DropIn (= 6.5.0)
-  - BraintreeDropIn/DropIn (6.5.0):
+  - BraintreeDropIn (7.0.0):
+    - BraintreeDropIn/DropIn (= 7.0.0)
+  - BraintreeDropIn/DropIn (7.0.0):
     - Braintree/Card (~> 4.17)
     - Braintree/Core (~> 4.17)
     - Braintree/PaymentFlow (~> 4.17)
+    - Braintree/PayPal (~> 4.17)
     - Braintree/UnionPay (~> 4.17)
     - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (6.5.0)
+  - BraintreeDropIn/UIKit (7.0.0)
+  - Firebase/Core (5.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.4.0)
+  - Firebase/CoreOnly (5.15.0):
+    - FirebaseCore (= 5.1.10)
+  - FirebaseAnalytics (5.4.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleAppMeasurement (= 5.4.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (5.1.10):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.3.0):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.3)
+    - GoogleUtilities/UserDefaults (~> 5.3)
+  - GoogleAppMeasurement (5.4.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.3.6):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.3.6)
+  - GoogleUtilities/Logger (5.3.6):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.3.6):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.3.6)"
+  - GoogleUtilities/Reachability (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.3.6):
+    - GoogleUtilities/Logger
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
 
 DEPENDENCIES:
   - BraintreeDropIn
+  - Firebase/Core
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Braintree
     - BraintreeDropIn
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - nanopb
 
 SPEC CHECKSUMS:
-  Braintree: 2982ea66c6ef4a22116a9f52210d54e3a9ae74b7
-  BraintreeDropIn: e141f6c1b49f0e3dd68ca00ccf6bb3031cc5e164
+  Braintree: 1659b7e4f28a667eb65427f211933776ec5ea212
+  BraintreeDropIn: 7eb460717213ae39a3b457c90671f9975747dcab
+  Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
+  FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
+  FirebaseCore: 35747502d9e8c6ee217385ad04446c7c2aaf9c5c
+  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
+  GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
+  GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: ef9e87da196f21993863a56cca3c02c0bd142aa3
+PODFILE CHECKSUM: a4ca0cd185815840973c39674e61c570ec6fba1b
 
 COCOAPODS: 1.5.0

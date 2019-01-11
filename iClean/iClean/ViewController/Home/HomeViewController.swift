@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class HomeViewController: BaseViewController {
 
@@ -24,6 +26,10 @@ class HomeViewController: BaseViewController {
         if !iCleanManager.sharedInstance.isBrainTreeTokenAvailable() {
             iCleanManager.sharedInstance.fetchBrainTreeToken()
         }
+        
+        Analytics.logEvent("Home_Screen", parameters: ["Home": "Shown"])
+        
+        
     }
     
 

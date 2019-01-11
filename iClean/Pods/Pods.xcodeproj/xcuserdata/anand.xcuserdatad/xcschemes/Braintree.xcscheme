@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "258E1A69FF92F6737431721F0EDBE6E1"
+               BlueprintIdentifier = "4C2CB851C179D4226A0D4FC3FB415074"
                BlueprintName = "Braintree"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Braintree.framework">

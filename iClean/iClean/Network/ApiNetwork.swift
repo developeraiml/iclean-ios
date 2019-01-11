@@ -45,6 +45,7 @@ class ApiNetwork: NSObject, URLSessionDelegate {
               postCompleted : @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void){
         var bodyDicts = bodyDict
         let appDel : AppDelegate? = UIApplication.shared.delegate as? AppDelegate
+        
         if appDel?.isNetworkAvailable() ==  false {
           
             let error : NSError = NSError(domain: "No Network", code: 404, userInfo: [ApiNetwork.KErrorKey : "No network found"])
@@ -66,7 +67,7 @@ class ApiNetwork: NSObject, URLSessionDelegate {
         let session = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         
         request.httpMethod = kPOSTHttpMethod
-        request.timeoutInterval = 30.0
+        request.timeoutInterval = 20.0
         
         if let _  = bodyDicts?["Token"] {
             if let tokenUpdated = (UserDefaults.standard.value(forKey: "Token")) {

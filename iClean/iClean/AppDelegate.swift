@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import UserNotifications
 import Braintree
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.didNetworkStatusChange), name: ReachabilityChangedNotification, object: nil)
         
         setupReachability()
+        
+        FirebaseApp.configure()
 
         if GoogleManager.sharedInstance.isTokenExpired() == true && GoogleManager.sharedInstance.getAccessToken() != nil{
             refreshToken()
@@ -39,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         BTAppSwitch.setReturnURLScheme("com.shaginian.SampleBraintree.payments")
-        
+                        
         return true
     }
 
