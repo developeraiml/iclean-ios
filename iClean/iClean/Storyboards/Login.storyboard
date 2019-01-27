@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2BB-An-P1g" kind="relationship" relationship="rootViewController" id="Aix-fK-ESu"/>
+                        <segue destination="2BB-An-P1g" kind="relationship" relationship="rootViewController" id="nir-k7-yVq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxz-s2-tdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820" y="128"/>
+            <point key="canvasLocation" x="-897" y="125"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="if4-kT-8Mo">
@@ -1503,6 +1503,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fct-QZ-Vsr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qIJ-5m-Jqj"/>
                     <connections>
                         <outlet property="tableview" destination="ed2-mr-9Zf" id="7FN-On-O5e"/>
                     </connections>
@@ -1591,10 +1592,10 @@
                                                 <constraint firstAttribute="width" constant="310" id="2Le-aU-MrP"/>
                                             </constraints>
                                             <attributedString key="attributedText">
-                                                <fragment content="All of our detergents are biodegradable and non-toxic">
+                                                <fragment content="We only use hypo-allergenic detergent">
                                                     <attributes>
-                                                        <color key="NSColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                                        <color key="NSColor" red="0.44706000000000001" green="0.44706000000000001" blue="0.44706000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="16" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -2197,8 +2198,54 @@ detergent</string>
                                             <outlet property="stackView" destination="7Wr-5m-tUW" id="hyt-JG-ItW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomSettingCell3" rowHeight="104" id="vux-WZ-xlb" customClass="CustomSettingCell" customModule="iClean" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="439" width="375" height="104"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomSettingCell3" rowHeight="50" id="czE-ca-xRc" customClass="CustomSettingCell" customModule="iClean" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="439" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="czE-ca-xRc" id="bQi-hK-K1B">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97F-YQ-k0A" customClass="ICButton" customModule="iClean" customModuleProvider="target">
+                                                    <rect key="frame" x="27" y="15" width="20" height="20"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="C1W-El-TA3"/>
+                                                        <constraint firstAttribute="width" constant="20" id="asy-MK-NRW"/>
+                                                    </constraints>
+                                                    <state key="selected" image="tickGrey"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="bordrWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="bordrColor">
+                                                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Fabric Softener" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akQ-dT-B0m">
+                                                    <rect key="frame" x="59" y="16.5" width="133.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <color key="textColor" red="0.3979517487" green="0.3979517487" blue="0.3979517487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="akQ-dT-B0m" firstAttribute="centerY" secondItem="bQi-hK-K1B" secondAttribute="centerY" id="7sm-FW-e3D"/>
+                                                <constraint firstItem="97F-YQ-k0A" firstAttribute="leading" secondItem="bQi-hK-K1B" secondAttribute="leading" constant="27" id="UNq-IN-7zy"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="akQ-dT-B0m" secondAttribute="trailing" constant="20" symbolic="YES" id="Y6r-KP-0yK"/>
+                                                <constraint firstItem="akQ-dT-B0m" firstAttribute="leading" secondItem="97F-YQ-k0A" secondAttribute="trailing" constant="12" id="agE-KM-Zp8"/>
+                                                <constraint firstItem="97F-YQ-k0A" firstAttribute="centerY" secondItem="bQi-hK-K1B" secondAttribute="centerY" id="f0j-Y0-6hu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkBtn" destination="97F-YQ-k0A" id="agp-XV-0DL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomSettingCell4" rowHeight="104" id="vux-WZ-xlb" customClass="CustomSettingCell" customModule="iClean" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="489" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vux-WZ-xlb" id="8iZ-jq-bhB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>

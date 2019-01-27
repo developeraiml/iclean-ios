@@ -17,6 +17,7 @@ class CustomSettingCell: UITableViewCell {
     @IBOutlet weak var customTextView: CustomTextView!
     @IBOutlet weak var stackView: ICStackView!
     
+    @IBOutlet weak var checkBtn: ICButton!
     var selectHandler : ((_ keyName: String)->Void)?
 
     
@@ -59,27 +60,30 @@ class CustomSettingCell: UITableViewCell {
     
     func updateButtonStatus( keyList : [String]) {
         
-        guard let views = (stackView.arrangedSubviews as? [StackInfoView]) else {
-            return
-        }
-        
-        for view in views {
+        if let stack = stackView {
+            guard let views = (stack.arrangedSubviews as? [StackInfoView]) else {
+                return
+            }
             
-            view.button.backgroundColor = UIColor.clear
-            view.tickImage.image = UIImage(named: "tick")
-            view.label.textColor = grayColor
-            
-            for key in keyList {
-                if view.button.titleLabel?.text == key {
-                    view.button.backgroundColor = greenColor
-                    view.tickImage.image = UIImage(named: "tickActive")
-                    view.label.textColor = UIColor.white
-                    
-                    if let handler = selectHandler {
-                        handler(view.button.titleLabel?.text ?? "")
+            for view in views {
+                
+                view.button.backgroundColor = UIColor.clear
+                view.tickImage.image = UIImage(named: "tick")
+                view.label.textColor = grayColor
+                
+                for key in keyList {
+                    if view.button.titleLabel?.text == key {
+                        view.button.backgroundColor = greenColor
+                        view.tickImage.image = UIImage(named: "tickActive")
+                        view.label.textColor = UIColor.white
+                        
+                        if let handler = selectHandler {
+                            handler(view.button.titleLabel?.text ?? "")
+                        }
                     }
                 }
             }
         }
+
     }
 }

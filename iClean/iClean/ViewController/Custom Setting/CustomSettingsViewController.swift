@@ -9,13 +9,23 @@
 import UIKit
 
 class CustomSettingsViewController: BaseViewController {
+    
+    enum TableSection : Int {
+        case Wash
+        case DryOption
+        case Detergent
+        case Instruction
+    }
 
-    fileprivate var selectedList = ["","",""]
+    fileprivate var selectedList = ["",""]
     
     var specialInstruction = ""
     var selectedKeys : [String]?
     
     var isloginFlow : Bool = false
+    var useFabricSoftner : Bool = false
+    
+   
 
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
@@ -31,11 +41,27 @@ class CustomSettingsViewController: BaseViewController {
                 self.tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             }
         }
+        
+        if selectedKeys?.contains("fabric_softner") == true {
+            useFabricSoftner = true
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "WashSettingListVC"
+        {
+            // Store the transaction whose details we wish to view
+            if let viewController = segue.destination as? WashSettingListViewController {
+                viewController.selectedKeys = selectedKeys
+            }
+        }
+        
     }
     
     fileprivate func getDictParams() -> [String: Any] {
         
-        let dict = ["is_iclean_recommended": false, "fabric_softner" : false, "detergent" : false,
+        let dict = ["is_iclean_recommended": false, "fabric_softner" : useFabricSoftner, "detergent" : false,
                     "wash_cold" : false, "wash_warm" :false , "wash_hot" : false , "dry_low" : false,
                     "dry_medium" : false, "dry_high" : false, "dry_hang_dry" : false]
         
@@ -121,6 +147,12 @@ class CustomSettingsViewController: BaseViewController {
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
+    @objc fileprivate func updateFabricStatus(sender : UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        useFabricSoftner = sender.isSelected
+    }
+    
 }
 
 extension CustomSettingsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -130,12 +162,28 @@ extension CustomSettingsViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (indexPath.section == 0) ? 120 : (indexPath.section != 3) ? 100 : 110
+        
+        var height: CGFloat = 0
+        
+        switch indexPath.section {
+        case TableSection.Wash.rawValue:
+            height = 100
+        case TableSection.DryOption.rawValue:
+            height = 110
+        case TableSection.Detergent.rawValue:
+            height = 60
+        default:
+            height = 110
+            
+        }
+        return height
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let identifier = (indexPath.section == 0) ? "CustomSettingCell" : "CustomSettingCell" + "\(indexPath.section)"
+//        let identifier = (indexPath.section == 0) ? "CustomSettingCell" : "CustomSettingCell" + "\(indexPath.section)"
+        
+         let identifier = "CustomSettingCell" + "\(indexPath.section + 1)"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomSettingCell
         
@@ -146,7 +194,11 @@ extension CustomSettingsViewController: UITableViewDataSource, UITableViewDelega
             }
 
             strongSelf.selectedList[indexPath.section] = selectedKey
-            //debugPrint(strongSelf.selectedList)
+        }
+        
+        if cell?.checkBtn != nil {
+            cell?.checkBtn.isSelected = useFabricSoftner
+            cell?.checkBtn.addTarget(self, action: #selector(updateFabricStatus), for: UIControl.Event.touchUpInside)
         }
         
         if cell?.customTextView != nil {

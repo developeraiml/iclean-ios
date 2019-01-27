@@ -15,7 +15,7 @@ class HomeWashSettingViewController: BaseViewController {
     fileprivate var specialInstruction : String = ""
     
     fileprivate var dressList = ["","",""]
-    fileprivate var noOfSection : Int = 2
+    fileprivate var noOfSection : Int = 1
 
     @IBOutlet weak var tableview: UITableView!
     
@@ -50,10 +50,10 @@ class HomeWashSettingViewController: BaseViewController {
             let list = dressList.filter({$0 == ""})
             if list.count == 0 {
                 
-                var dict = getDictParams()
-                dict["is_iclean_recommended"] = false
+//                var dict = getDictParams()
+//                dict["is_iclean_recommended"] = false
                 
-                //var dict: [String: Any] = ["is_iclean_recommended": false]
+                var dict: [String: Any] = ["is_iclean_recommended": false]
                 for sKey in dressList {
                     dict[sKey] = true as AnyObject
                 }
@@ -140,9 +140,9 @@ class HomeWashSettingViewController: BaseViewController {
                                 strongSelf.rowSelected = isRecommended ? 0 : 1
                                 strongSelf.noOfSection = 1
                                 
-                                if isRecommended == false {
-                                    strongSelf.noOfSection = 2
-                                }
+//                                if isRecommended == false {
+//                                    strongSelf.noOfSection = 2
+//                                }
                             }
                             
                             if let instruction = innerData["special_instructions"] as? String {
@@ -179,7 +179,8 @@ class HomeWashSettingViewController: BaseViewController {
     @objc fileprivate func tickButtonAction(sender : UIButton) {
         
         rowSelected = sender.tag
-        noOfSection = rowSelected == 0 ? 1 : 2
+        //Uncomment the code to show Dress Shirt Preference
+      //  noOfSection = rowSelected == 0 ? 1 : 2
         self.tableview.reloadData()
     }
 
@@ -227,6 +228,8 @@ extension HomeWashSettingViewController: UITableViewDataSource, UITableViewDeleg
             
             cell?.tickBtn.tag = indexPath.row
             
+            cell?.tickBtn.isUserInteractionEnabled = indexPath.row == 0 ? true : false
+            
             cell?.tickBtn.isSelected = false
             if indexPath.row == rowSelected {
                 cell?.tickBtn.isSelected = true
@@ -258,7 +261,7 @@ extension HomeWashSettingViewController: UITableViewDataSource, UITableViewDeleg
         
         if let cell: WashSettingsCell = tableView.cellForRow(at: indexPath) as? WashSettingsCell {
             cell.tickBtn.isSelected = true
-          //  rowSelected = indexPath.row
+            rowSelected = indexPath.row
             tableView.reloadData()
         }
         

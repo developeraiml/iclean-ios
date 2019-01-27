@@ -19,5 +19,6 @@ class GetDirectionCell: UICollectionViewCell {
     
     @IBOutlet weak var specialNotes: UITextView!
     
+    @IBOutlet weak var leaveAtDoorman: UILabel!
     @IBOutlet weak var getDirectionBtn: UIButton!
 }

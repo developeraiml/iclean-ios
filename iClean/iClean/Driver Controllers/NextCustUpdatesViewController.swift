@@ -39,6 +39,20 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
         
     }
     
+    @IBAction func showDirectionAction(_ sender: Any) {
+        
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+          
+            UIApplication.shared.open(URL(string:
+                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!, options: [:], completionHandler: nil)
+        } else {
+            
+            UIApplication.shared.open(URL(string:"https://www.google.com/maps/@42.585444,13.007813,6z")!, options: [:], completionHandler: nil)
+           
+        }
+    }
+    
+    
     fileprivate func updateDropOffDriverStatusInfo() {
         
         switch order?.ordInfo?.dropOffDriverStatus {
@@ -81,7 +95,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomerPreviewCell", for: indexPath) as? CustomerPreviewCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = order?.address?.address_1
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
             
             if order?.type == .OrderPickup {
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
@@ -91,6 +105,9 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.pickUpTime.text = "DROP-OFF " + (order?.ordInfo?.dropOffTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
+                cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
+                
+                //debugPrint(order?.ordInfo?.dropOffLocation?.leaveAtDoorman)
             }
             
             cell?.letThemKnowBtn.addTarget(self, action: #selector(letCustomerKnow), for: .touchUpInside)
@@ -99,7 +116,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GetDirectionCell", for: indexPath) as? GetDirectionCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = "\(order?.address?.address_1 ?? ""), \(order?.address?.apartment_name ?? ""), \(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")" 
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
             
             if order?.type == .OrderPickup {
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
@@ -109,6 +126,8 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.pickUpTime.text = "DROP-OFF " + (order?.ordInfo?.dropOffTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
+                cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
+
             }
             
             cell?.getDirectionBtn.addTarget(self, action: #selector(getCustomerDirection), for: .touchUpInside)
@@ -117,7 +136,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeliveryPickupCell", for: indexPath) as? DeliveryPickupCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = "\(order?.address?.address_1 ?? ""), \(order?.address?.apartment_name ?? ""), \(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")" 
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
             
             cell?.makeCallBtn.addTarget(self, action: #selector(callCustomer), for: .touchUpInside)
             
@@ -129,6 +148,8 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
                 cell?.bottmTextLbl.text = "Were you able to drop-off the order?"
+                cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
+
                 
             }
             

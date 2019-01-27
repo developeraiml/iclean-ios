@@ -105,18 +105,27 @@ class ChangeEmailPasswordViewController: BaseViewController,UITextFieldDelegate 
     
     fileprivate func changeEmail() {
         
-        guard let obj = cardInputlist?[0], let email = obj.keyName?.trimWhiteSpace(), !email.isEmpty, email.isValidEmail() == true else {
+        guard let obj = cardInputlist?[0], let email = obj.name?.trimWhiteSpace(), !email.isEmpty, email.isValidEmail() == true else {
             presentAlert(title: nil, message: "Please add valid Email.")
             return
         }
         
         guard let emailObj = cardInputlist?[1], let email1 = emailObj.name?.trimWhiteSpace(), !email1.isEmpty, email1.isValidEmail() == true else {
-            presentAlert(title: nil, message: "Please add valid Email.")
+            presentAlert(title: nil, message: "Please add valid New Email.")
             return
         }
         
         guard let emailObj1 = cardInputlist?[2], let email2 = emailObj1.name?.trimWhiteSpace(), !email2.isEmpty, email2.isValidEmail() == true else {
-            presentAlert(title: nil, message: "Please add valid Email.")
+            presentAlert(title: nil, message: "Please add valid Confirm Email.")
+            return
+        }
+        
+        if email == email1 {
+            presentAlert(title: nil, message: "Your old & new email ids are same. Please use new email id.")
+            return
+        }
+        else if email1 != email2 {
+            presentAlert(title: nil, message: "Confrim email doesn't match with new email.")
             return
         }
         

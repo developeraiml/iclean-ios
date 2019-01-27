@@ -126,7 +126,7 @@ class AddLocationViewController: BaseViewController {
 
         for user in locationInputlist {
             
-            guard let name = user.name?.trimWhiteSpace(), !name.isEmpty else {
+            guard let name = user.name?.trimWhiteSpace(), !name.isEmpty, (user.keyName != "apartment_name" || user.keyName != "gate_code") else {
                 presentAlert(title: nil, message: user.errorMessage!)
                 return
             }
@@ -384,12 +384,15 @@ extension AddLocationViewController {
         apartment.keyboardType = .asciiCapable
         apartment.keyName = "apartment_name"
         apartment.errorMessage = "Please add apartment name"
+        apartment.name = ""
         
         let gatecode = UserObject()
         gatecode.placeholder = "Gate Code"
         gatecode.keyboardType = .asciiCapable
         gatecode.keyName = "gate_code"
         gatecode.errorMessage = "Please add your gate code"
+        gatecode.name = ""
+
         
         let city = UserObject()
         city.placeholder = "City"

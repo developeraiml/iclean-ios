@@ -17,6 +17,7 @@ class CustomerPreviewCell: UICollectionViewCell {
     
     @IBOutlet weak var specialInstructionLbl: UILabel!
     
+    @IBOutlet weak var leaveAtDoorman: UILabel!
     @IBOutlet weak var specialNotes: UITextView!
     
     @IBOutlet weak var letThemKnowBtn: UIButton!

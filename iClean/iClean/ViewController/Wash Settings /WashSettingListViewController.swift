@@ -11,12 +11,24 @@ import UIKit
 class WashSettingListViewController: BaseViewController {
     
     fileprivate var selectedList = ["","",""]
+    var selectedKeys : [String]?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    fileprivate func getDictParams() -> [String: Any] {
+        
+        let dict = ["is_iclean_recommended": false, "package_boxed" : false, "package_hanger" : false,
+                    "starch_heavy" : false, "starch_medium" :false , "starch_light" : false , "starch_none" : false,
+                    "clean_we_decide" : false, "clean_laundry" : false, "clean_dry_clean" : false]
+        
+        return dict
+    }
+
     
 
     @IBAction func doneAction(_ sender: Any) {
@@ -25,7 +37,10 @@ class WashSettingListViewController: BaseViewController {
         let list = selectedList.filter({$0 == ""})
         if list.count == 0 {
             
-            var dict: [String: Any] = ["is_iclean_recommended": false]
+            var dict = getDictParams()
+            //var dict: [String: Any] = ["is_iclean_recommended": false]
+            dict["is_iclean_recommended"] = false
+            
             for sKey in selectedList {
                 dict[sKey] = true as AnyObject
             }
@@ -48,14 +63,21 @@ class WashSettingListViewController: BaseViewController {
                         if result?["status"] as? Int == 401 {
                             
                             strongSelf.presentAlert(title: nil, message: "Something went worng", completion: { (status) in
+                        
                                 if let appDel = UIApplication.shared.delegate as? AppDelegate {
                                     appDel.switchToLogin()
                                 }
                             })
                             
                         } else if result?["status"] as? Int == 200 {
-                            
-                            (UIApplication.shared.delegate as? AppDelegate)?.switchToDashboard()
+                            if strongSelf.selectedKeys != nil {
+                                if let vc = strongSelf.navigationController?.children[1] {
+                                    strongSelf.navigationController?.popToViewController(vc, animated: true)
+                                }
+                            } else {
+                                (UIApplication.shared.delegate as? AppDelegate)?.switchToDashboard()
+
+                            }
                         } else {
                             strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
                         }
@@ -93,7 +115,7 @@ extension WashSettingListViewController: UITableViewDataSource, UITableViewDeleg
         let identifier = (indexPath.section == 0) ? "washSetting" : "washSetting" + "\(indexPath.section)"
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CustomSettingCell
-        
+
         cell?.selectHandler = { [weak self] selectedKey in
             
             guard  let strongSelf = self else {
@@ -103,6 +125,12 @@ extension WashSettingListViewController: UITableViewDataSource, UITableViewDeleg
             strongSelf.selectedList[indexPath.section] = selectedKey
             //debugPrint(strongSelf.selectedList)
         }
+        
+        
+        if let keys = selectedKeys {
+            cell?.updateButtonStatus(keyList: keys)
+        }
+        
         
         return cell!
         
