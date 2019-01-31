@@ -126,12 +126,19 @@ class AddLocationViewController: BaseViewController {
 
         for user in locationInputlist {
             
-            guard let name = user.name?.trimWhiteSpace(), !name.isEmpty, (user.keyName != "apartment_name" || user.keyName != "gate_code") else {
-                presentAlert(title: nil, message: user.errorMessage!)
-                return
+            
+            if (user.keyName == "apartment_name" || user.keyName == "gate_code") {
+                param[user.keyName!] = user.name?.encodeEmoji as AnyObject
+            } else {
+                
+                guard let name = user.name?.trimWhiteSpace(), !name.isEmpty else {
+                    presentAlert(title: nil, message: user.errorMessage!)
+                    return
+                }
+                param[user.keyName!] = name.encodeEmoji as AnyObject
+
             }
             
-            param[user.keyName!] = name.encodeEmoji as AnyObject
         }
         
         for user in locationStateInputlist {
@@ -256,7 +263,15 @@ extension AddLocationViewController {
                         })
                         
                     } else {
-                        strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+                        
+                        if let innerData = response?["data"] as? [String: AnyObject] {
+                            if let errors = innerData["errors"] as? [String] {
+                                strongSelf.presentAlert(title: nil, message: errors.joined(separator: ", "))
+                            }
+                        } else {
+                            strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+
+                        }
                     }
                     
                 } else {
