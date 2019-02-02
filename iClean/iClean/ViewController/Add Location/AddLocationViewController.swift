@@ -217,7 +217,15 @@ extension AddLocationViewController {
                         })
                         
                     } else {
-                        strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+                        
+                        if let innerData = response?["data"] as? [String: AnyObject] {
+                            if let errors = innerData["errors"] as? [String] {
+                                strongSelf.presentAlert(title: nil, message: errors.joined(separator: ", "))
+                            }
+                        } else {
+                            strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+
+                        }
                     }
                     
                 } else {

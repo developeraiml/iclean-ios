@@ -41,15 +41,22 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
     
     @IBAction func showDirectionAction(_ sender: Any) {
         
-        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
-          
-            UIApplication.shared.open(URL(string:
-                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!, options: [:], completionHandler: nil)
-        } else {
+        var dirAddress = ""
+         if order?.type == .OrderPickup {
+            if let address =  order?.ordInfo?.pickupLocation {
+                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""),\(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
+            }
             
-            UIApplication.shared.open(URL(string:"https://www.google.com/maps/@42.585444,13.007813,6z")!, options: [:], completionHandler: nil)
-           
+         } else {
+            if let address =  order?.ordInfo?.dropOffLocation {
+                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""),\(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
+            }
         }
+        
+        dirAddress = dirAddress.replacingOccurrences(of:" ", with: "")
+        
+        UIApplication.shared.open(URL(string:"https://maps.google.com/maps?f=d&daddr=\(dirAddress)&sll=35.6586,139.7454&sspn=0.2,0.1&nav=1")!, options: [:], completionHandler: nil)
+  
     }
     
     
@@ -101,11 +108,22 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.pickupDriverInst
                 cell?.specialInstructionLbl.text = "SPECIAL PICK UP INSTRUCTIONS"
+                
+                if let address =  order?.ordInfo?.pickupLocation {
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
+                
             } else {
                 cell?.pickUpTime.text = "DROP-OFF " + (order?.ordInfo?.dropOffTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
                 cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
+                
+                if let address =  order?.ordInfo?.dropOffLocation {
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
                 
                 //debugPrint(order?.ordInfo?.dropOffLocation?.leaveAtDoorman)
             }
@@ -122,11 +140,23 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.pickupDriverInst
                 cell?.specialInstructionLbl.text = "SPECIAL PICK UP INSTRUCTIONS"
+                
+                if let address =  order?.ordInfo?.pickupLocation {
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
+              
+                
             } else {
                 cell?.pickUpTime.text = "DROP-OFF " + (order?.ordInfo?.dropOffTime ?? "")
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
                 cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
+                
+                if let address =  order?.ordInfo?.dropOffLocation {
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
 
             }
             
@@ -144,12 +174,24 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.specialNotes.text = order?.ordInfo?.pickupDriverInst
                 cell?.specialInstructionLbl.text = "SPECIAL PICK UP INSTRUCTIONS"
                 cell?.bottmTextLbl.text = "Were you able to pick-up the order?"
+                
+                if let address =  order?.ordInfo?.pickupLocation {
+                    
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
+                
             } else {
                 cell?.specialNotes.text = order?.ordInfo?.dropOffDriverInst
                 cell?.specialInstructionLbl.text = "DROP OFF INSTRUCTIONS"
                 cell?.bottmTextLbl.text = "Were you able to drop-off the order?"
                 cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
 
+                if let address =  order?.ordInfo?.dropOffLocation {
+                    
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                }
+                
                 
             }
             
