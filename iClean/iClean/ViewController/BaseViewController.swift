@@ -166,11 +166,16 @@ class BaseViewController: UIViewController {
     
     func showLoadSpinner(message : String?) {
         
-       let hud = MBProgressHUD.showAdded(to: view, animated: true)
-        
-        if message != nil {
-           hud.label.text = message
+        DispatchQueue.main.async {
+            
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            if message != nil {
+                hud.label.text = message
+            }
         }
+        
+
 
 //        DispatchQueue.main.async {
 //            self.hideLoadSpinner()
