@@ -40,7 +40,7 @@ class LocationListViewController: BaseViewController {
         let api  = LocationNetworkModel()
         api.fetchAddress { (success, result, error) in
             
-            debugPrint(result)
+          //  debugPrint(result)
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
@@ -147,9 +147,9 @@ extension LocationListViewController: UITableViewDataSource,UITableViewDelegate 
         
         let address = addressList[indexPath.row]
         
-        cell?.nickName.text = address.nickname
+        cell?.nickName.text = address.nickname?.capitalized
         
-        cell?.address.text =  "\(address.apartment_name ?? "") \(address.address_1 ?? ""), \(address.city ?? ""), \(address.state ?? ""), \(address.zip_code ?? "") "
+        cell?.address.text =  "\(address.address_1 ?? ""), \(address.apartment_name ?? ""), \(address.city ?? ""), \(address.state ?? ""), \(address.zip_code ?? "") ".capitalized
         
         return cell!
     }

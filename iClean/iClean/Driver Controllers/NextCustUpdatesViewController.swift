@@ -102,7 +102,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomerPreviewCell", for: indexPath) as? CustomerPreviewCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")".capitalized
             
             if order?.type == .OrderPickup {
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
@@ -110,7 +110,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.specialInstructionLbl.text = "SPECIAL PICK UP INSTRUCTIONS"
                 
                 if let address =  order?.ordInfo?.pickupLocation {
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
                 
@@ -121,7 +121,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
                 
                 if let address =  order?.ordInfo?.dropOffLocation {
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
                 
@@ -134,7 +134,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GetDirectionCell", for: indexPath) as? GetDirectionCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")".capitalized
             
             if order?.type == .OrderPickup {
                 cell?.pickUpTime.text = "PICK-UP " + (order?.ordInfo?.pickupTime ?? "")
@@ -142,7 +142,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.specialInstructionLbl.text = "SPECIAL PICK UP INSTRUCTIONS"
                 
                 if let address =  order?.ordInfo?.pickupLocation {
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
               
@@ -154,7 +154,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 cell?.leaveAtDoorman.isHidden = order?.ordInfo?.dropOffLocation?.leaveAtDoorman == true ? false : true
                 
                 if let address =  order?.ordInfo?.dropOffLocation {
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
 
@@ -166,7 +166,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DeliveryPickupCell", for: indexPath) as? DeliveryPickupCell
             
             cell?.customerName.text = order?.customer?.name
-            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")"
+            cell?.address.text = "\(order?.address?.address_1 ?? ""), apt #\(order?.address?.apartment_name ?? ""), gate code #\(order?.address?.gate_code ?? ""), \(order?.address?.city ?? ""), \(order?.address?.state ?? "") \(order?.address?.zip_code ?? "")".capitalized
             
             cell?.makeCallBtn.addTarget(self, action: #selector(callCustomer), for: .touchUpInside)
             
@@ -177,7 +177,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
                 
                 if let address =  order?.ordInfo?.pickupLocation {
                     
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
                 
@@ -189,7 +189,7 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
 
                 if let address =  order?.ordInfo?.dropOffLocation {
                     
-                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+                    cell?.address.text = "\(address.address_1 ?? ""), apt #\(address.apartment_name ?? ""), gate code #\(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
                 }
                 
                 

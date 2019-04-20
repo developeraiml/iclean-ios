@@ -183,6 +183,8 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
         return cell!
     }
     
+    
+    //Commit this code if we need to select always the first index
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "NextCustUpdatesVC") as? NextCustUpdatesViewController

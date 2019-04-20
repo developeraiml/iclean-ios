@@ -311,7 +311,7 @@ extension AddLocationViewController: UITableViewDataSource, UITableViewDelegate 
             
             let user = locationInputlist[indexPath.row]
             cell?.userTextField.placeholder = user.placeholder
-            cell?.userTextField.text = user.name
+            cell?.userTextField.text = user.name?.capitalized
             cell?.userTextField.keyboardType = user.keyboardType
             cell?.userTextField.returnKeyType = user.returnType
             cell?.userTextField.tag = indexPath.row
@@ -330,7 +330,7 @@ extension AddLocationViewController: UITableViewDataSource, UITableViewDelegate 
             let zip = locationStateInputlist[1]
 
             cell?.stateField.placeholder = state.placeholder
-            cell?.stateField.text = state.name
+            cell?.stateField.text = state.name?.capitalized
             cell?.stateField.keyboardType = state.keyboardType
             cell?.stateField.returnKeyType = state.returnType
             cell?.stateField.delegate = self

@@ -86,7 +86,7 @@ class PriceListViewController: BaseViewController,UITableViewDelegate,UITableVie
         
         let price = self.priceList[indexPath.row]
         
-        cell?.textLabel?.text = price.item_name
+        cell?.textLabel?.text = price.item_name?.capitalized
         cell?.detailTextLabel?.text = "$\(price.price)"
         
         return cell!

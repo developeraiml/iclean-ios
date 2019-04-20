@@ -159,7 +159,7 @@ extension CardListViewController: UITableViewDataSource, UITableViewDelegate {
         cell?.editBtn.isHidden = true
         cell?.cardType.text = (crd.companyName ?? "") + " - " + (crd.expiry ?? "")
         cell?.cardNumber.text = "XXXX-XXXX-XXXX-\(crd.cardNumber ?? "")"
-        cell?.nickName.text = crd.nickName
+        cell?.nickName.text = crd.nickName?.capitalized
         
         return cell!
         

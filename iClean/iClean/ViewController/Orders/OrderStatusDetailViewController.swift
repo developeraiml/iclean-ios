@@ -101,7 +101,7 @@ extension OrderStatusDetailViewController: UITableViewDataSource {
         cell?.pickDate.text = "Date: " + ((indexPath.row == 0) ? orderStatus?.pickupDate ?? "" : orderStatus?.dropOffDate ?? "")
         
         if let address = ((indexPath.row == 0) ? orderStatus?.pickupLocation : orderStatus?.dropOffLocation) {
-            cell?.pickAddress.text = "\(address.address_1 ?? ""), \(address.apartment_name ?? ""), \(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")"
+            cell?.pickAddress.text = "\(address.address_1 ?? ""), \(address.apartment_name ?? ""), \(address.gate_code ?? ""), \(address.city ?? ""), \(address.state ?? "") \(address.zip_code ?? "")".capitalized
         }
 
         cell?.editButton.isEnabled = true

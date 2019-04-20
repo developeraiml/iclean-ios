@@ -137,7 +137,7 @@ class OrderHistoryViewController: BaseViewController,UITableViewDataSource,UITab
             cell?.amountLabel.text = "$\(ord.orderCost ?? 0)"
         }
         
-        cell?.historyDesc.text = ord.serviceNotes
+        cell?.historyDesc.text = ord.serviceNotes?.capitalized
         
         if indexPath.row >= (orderList.count - 2) && loadMore == true {
             loadMore = false

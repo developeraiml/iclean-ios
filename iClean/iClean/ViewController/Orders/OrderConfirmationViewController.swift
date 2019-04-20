@@ -162,8 +162,9 @@ extension OrderConfirmationViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: GeneralConstants.orderConfirmationCel) as? OrderConfirmationCell
             
             let wash = orderObject?.washSetting
-            cell?.washType.text = wash?.washType
-            cell?.washNotes.text = wash?.washNotes!.count != 0 ? wash?.washNotes : "You have not added any notes for wash."
+            let washType = wash?.washType?.replacingOccurrences(of: "_", with: " ")
+            cell?.washType.text = washType?.capitalized
+            cell?.washNotes.text = wash?.washNotes!.count != 0 ? wash?.washNotes?.capitalized : "You have not added any notes for wash."
             return cell!
         } else {
             
@@ -173,7 +174,7 @@ extension OrderConfirmationViewController {
             
             cell?.pickupLbl.text = indexPath.row == 0 ? "PICK UP" : "DROP OFF"
             
-            cell?.locationLabel.text = order?.selectedAddress
+            cell?.locationLabel.text = order?.selectedAddress?.capitalized
             cell?.dateLabel.text = order?.selectedDate
             cell?.timeLabel.text = order?.selectedTime
             

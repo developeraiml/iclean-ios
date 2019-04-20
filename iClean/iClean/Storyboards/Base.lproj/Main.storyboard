@@ -4858,10 +4858,72 @@ detergent</string>
                                                                                 <constraint firstAttribute="height" constant="15" id="zUh-Xe-4AX"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang Dry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-0b-Bm3">
-                                                                            <rect key="frame" x="8" y="33" width="67" height="18"/>
-                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                                                            <color key="textColor" red="0.3979517487" green="0.3979517487" blue="0.3979517487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-0b-Bm3">
+                                                                            <rect key="frame" x="8" y="27" width="67" height="29"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Hang Dry ">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.3979517487" green="0.3979517487" blue="0.3979517487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                                <fragment>
+                                                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                                                    <attributes>
+                                                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                                <fragment content="1$ per item">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.3979517487" green="0.3979517487" blue="0.3979517487" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                        <font key="NSFont" size="9" name="HelveticaNeue-Medium"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                            <tabStops>
+                                                                                                <textTab alignment="left" location="28.299999237060547">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="56.650001525878906">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="85">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="113.34999847412109">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="141.69999694824219">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="170.05000305175781">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="198.39999389648438">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="226.75">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="255.10000610351562">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="283.45001220703125">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="311.79998779296875">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                                <textTab alignment="left" location="340.14999389648438">
+                                                                                                    <options/>
+                                                                                                </textTab>
+                                                                                            </tabStops>
+                                                                                        </paragraphStyle>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -4870,12 +4932,12 @@ detergent</string>
                                                                         <constraint firstItem="aWe-ol-5DA" firstAttribute="leading" secondItem="RyN-EI-mj3" secondAttribute="leading" id="4FU-OM-gCQ"/>
                                                                         <constraint firstAttribute="trailing" secondItem="SbC-0b-Bm3" secondAttribute="trailing" constant="8" id="DhO-Hd-uFa"/>
                                                                         <constraint firstItem="mRM-WT-cyo" firstAttribute="centerX" secondItem="RyN-EI-mj3" secondAttribute="centerX" constant="0.5" id="I1h-2n-24t"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="SbC-0b-Bm3" secondAttribute="bottom" constant="9" id="Q2D-Yw-kNE"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="SbC-0b-Bm3" secondAttribute="bottom" constant="4" id="Q2D-Yw-kNE"/>
                                                                         <constraint firstItem="aWe-ol-5DA" firstAttribute="top" secondItem="RyN-EI-mj3" secondAttribute="top" id="TmL-i8-Kz2"/>
                                                                         <constraint firstItem="SbC-0b-Bm3" firstAttribute="leading" secondItem="RyN-EI-mj3" secondAttribute="leading" constant="8" id="fG3-Wr-3vM"/>
                                                                         <constraint firstAttribute="bottom" secondItem="aWe-ol-5DA" secondAttribute="bottom" id="ke3-F2-11p"/>
                                                                         <constraint firstAttribute="trailing" secondItem="aWe-ol-5DA" secondAttribute="trailing" id="mlv-jN-1SH"/>
-                                                                        <constraint firstItem="SbC-0b-Bm3" firstAttribute="top" secondItem="mRM-WT-cyo" secondAttribute="bottom" constant="8" id="vxq-KO-uZE"/>
+                                                                        <constraint firstItem="SbC-0b-Bm3" firstAttribute="top" secondItem="mRM-WT-cyo" secondAttribute="bottom" constant="2" id="vxq-KO-uZE"/>
                                                                         <constraint firstItem="mRM-WT-cyo" firstAttribute="top" secondItem="RyN-EI-mj3" secondAttribute="top" constant="10" id="z57-QF-cpH"/>
                                                                     </constraints>
                                                                     <connections>
@@ -4984,7 +5046,7 @@ detergent</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pT-Ie-ZUd" customClass="CustomTextView" customModule="iClean" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="34" width="335" height="63.5"/>
+                                                    <rect key="frame" x="20" y="34" width="335" height="64"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Instruction here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-iQ-ztw">
                                                             <rect key="frame" x="8" y="4" width="143" height="21"/>
@@ -4996,7 +5058,7 @@ detergent</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-M5-20n">
-                                                            <rect key="frame" x="4" y="0.0" width="327" height="63.5"/>
+                                                            <rect key="frame" x="4" y="0.0" width="327" height="64"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
