@@ -15,6 +15,7 @@ class MenuViewController: UIViewController {
         case washSettings
         case myCard
         case myLocation
+        case ourPricing
         case changeEmail
         case changePassword
         case FAQ
@@ -27,6 +28,7 @@ class MenuViewController: UIViewController {
         case washSettings
         case myCard
         case myLocation
+        case ourPricing
         case FAQ
         case contact
         case logout
@@ -39,6 +41,7 @@ class MenuViewController: UIViewController {
                                   ["name" : "WASH SETTINGS", "image" : "icnWashSettings"],
                                   ["name" : "MY CARD", "image" : "icnMyCard"],
                                   ["name" : "MY LOCATIONS", "image" : "icnMyLocations"],
+                                  ["name" : "PRICING", "image" : "icnDollar"],
                                   ["name" : "CHANGE E-MAIL", "image" : "icnChangeEmail"],
                                   ["name" : "CHANGE PASSWORD", "image" : "icnChangePassword"],
                                   ["name" : "FAQ", "image" : "icnFaq"],
@@ -49,6 +52,7 @@ class MenuViewController: UIViewController {
                                 ["name" : "WASH SETTINGS", "image" : "icnWashSettings"],
                                 ["name" : "MY CARD", "image" : "icnMyCard"],
                                 ["name" : "MY LOCATIONS", "image" : "icnMyLocations"],
+                                ["name" : "PRICING", "image" : "icnDollar"],
                                 ["name" : "FAQ", "image" : "icnFaq"],
                                 ["name" : "CONTACT iClean", "image" : "icnSupport"],
                                 ["name" : "LOGOUT", "image" : "icnLogout"]]
@@ -131,6 +135,9 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         if isLoggedSM == true {
             
             switch indexPath.row {
+                
+            case smMenuType.ourPricing.rawValue:
+                showPriceList()
             case smMenuType.orderHistory.rawValue:
                 showOrderHistory()
             case smMenuType.myLocation.rawValue:
@@ -156,6 +163,8 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
                 showOrderHistory()
             case menuType.myLocation.rawValue:
                 showLocationList()
+            case menuType.ourPricing.rawValue:
+                showPriceList()
             case menuType.washSettings.rawValue:
                 showWashSettings()
             case menuType.myCard.rawValue:
@@ -179,6 +188,12 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
             self.closeMenu()
         }
       
+    }
+    
+    fileprivate func showPriceList() {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier:"PriceListViewController") as? PriceListViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     fileprivate func showOrderHistory() {
