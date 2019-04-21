@@ -167,6 +167,10 @@ class OrderStatusViewController: BaseViewController {
                         self?.openEditOrderScreen(isRescheduled: true, withPickDrop: true)
                     }
                     
+                    vc?.cancelHandler = { [weak self] in
+                        self?.navigationController?.popToRootViewController(animated: true)
+                    }
+                    
                     vc?.willMove(toParent: self)
                     self.view.addSubview(vc!.view)
                     self.addChild(vc!)
@@ -198,6 +202,11 @@ class OrderStatusViewController: BaseViewController {
                     vc?.rescheduleHandler = { [weak self] status in
                         self?.openEditOrderScreen(isRescheduled: true, withPickDrop: false)
                     }
+                    
+                    vc?.cancelHandler = { [weak self] in
+                        self?.navigationController?.popToRootViewController(animated: true)
+                    }
+                    
                     vc?.willMove(toParent: self)
                     self.view.addSubview(vc!.view)
                     self.addChild(vc!)

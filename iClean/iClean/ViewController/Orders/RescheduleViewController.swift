@@ -26,6 +26,7 @@ class RescheduleViewController: BaseViewController {
     var showOnlyCancel : Bool = false
     
     var rescheduleHandler : ((Bool)->Void)?
+    var cancelHandler: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,11 @@ class RescheduleViewController: BaseViewController {
                         })
                         
                     } else if response?["status"] as? Int == 204 {
+                        
+                        if let handler = strongSelf.cancelHandler {
+                            handler()
+                        }
+                        
                         strongSelf.navigationController?.popViewController(animated: true)
                     } else {
                         strongSelf.presentAlert(title: nil, message: message ?? "Api error")
