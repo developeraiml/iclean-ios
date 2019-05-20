@@ -154,6 +154,13 @@ extension AddCardViewController {
     }
     
     func showAddCardUI() {
+        
+        guard iCleanManager.sharedInstance.brainTreeClientToken.count != 0 else {
+            
+            self.presentAlert(title: "Payment Gate Error", message: "Not able to connect server. Please restart the app again.")
+            return
+        }
+        
         let request =  BTDropInRequest()
         let dropIn = BTDropInController(authorization: iCleanManager.sharedInstance.brainTreeClientToken, request: request)
         { (controller, result, error) in

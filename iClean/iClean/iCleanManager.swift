@@ -82,6 +82,8 @@ class iCleanManager: NSObject {
             
             DispatchQueue.main.async(execute: { [weak self] in
                 
+                debugPrint(response)
+                
                 guard let strongSelf = self else { return }
                 
                 if success {

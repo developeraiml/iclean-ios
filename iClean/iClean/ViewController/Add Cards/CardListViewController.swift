@@ -53,6 +53,12 @@ class CardListViewController: BaseViewController {
             return
         }
         
+        guard iCleanManager.sharedInstance.brainTreeClientToken.count != 0 else {
+            
+            self.presentAlert(title: "Payment Gate Error", message: "Not able to connect server. Please restart the app again.")
+            return
+        }
+        
         let request =  BTDropInRequest()
         let dropIn = BTDropInController(authorization: iCleanManager.sharedInstance.brainTreeClientToken , request: request)
         { (controller, result, error) in
@@ -79,7 +85,11 @@ class CardListViewController: BaseViewController {
             }
             controller.dismiss(animated: true, completion: nil)
         }
-        self.present(dropIn!, animated: true, completion: nil)
+        
+        if let dropIn = dropIn {
+            self.present(dropIn, animated: true, completion: nil)
+
+        }
     }
     
     fileprivate func addCard(nonce : String) {

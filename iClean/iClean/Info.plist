@@ -33,14 +33,14 @@
 			<string>Test App</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb2004868666218058</string>
+				<string>fb697374160636228</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>7</string>
 	<key>FacebookAppID</key>
-	<string>2004868666218058</string>
+	<string>697374160636228</string>
 	<key>FacebookDisplayName</key>
 	<string>iClean</string>
 	<key>LSApplicationQueriesSchemes</key>
