@@ -138,7 +138,7 @@ class OrderStatusViewController: BaseViewController {
 
         switch orderDetails?.ordStatus {
         case .OrderPlaced?:
-            self.orderStatusLbl.text = "Your order is confirmed. Please have your order ready prior to your driver arrival."
+            self.orderStatusLbl.text = "Your order is confirmed. Please have your order ready prior to your drivers arrival."
         case .OrderPickup?:
             self.orderStatusLbl.text = "Your order has been picked up."
         case .Cleaning?:
