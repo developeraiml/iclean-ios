@@ -44,16 +44,16 @@ class NextCustUpdatesViewController: BaseViewController,UICollectionViewDataSour
         var dirAddress = ""
          if order?.type == .OrderPickup {
             if let address =  order?.ordInfo?.pickupLocation {
-                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""),\(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
+                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""), \(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
             }
             
          } else {
             if let address =  order?.ordInfo?.dropOffLocation {
-                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""),\(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
+                dirAddress = "\(address.apartment_name ?? "")+\(address.address_1 ?? ""), \(address.city ?? ""), \(address.state ?? "")-\(address.zip_code ?? "")"
             }
         }
         
-        dirAddress = dirAddress.replacingOccurrences(of:" ", with: "")
+        dirAddress =  dirAddress.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "" //dirAddress.replacingOccurrences(of:", ", with: ",")
         
         UIApplication.shared.open(URL(string:"https://maps.google.com/maps?f=d&daddr=\(dirAddress)&sll=35.6586,139.7454&sspn=0.2,0.1&nav=1")!, options: [:], completionHandler: nil)
   
