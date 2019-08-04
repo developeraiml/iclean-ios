@@ -107,6 +107,7 @@
 		172D7DAD219262AB009C0EB2 /* GetDirectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DAC219262AB009C0EB2 /* GetDirectionCell.swift */; };
 		172D7DAF21926366009C0EB2 /* DeliveryPickupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DAE21926366009C0EB2 /* DeliveryPickupCell.swift */; };
 		172D7DB1219266B4009C0EB2 /* DriverNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D7DB0219266B4009C0EB2 /* DriverNotesViewController.swift */; };
+		172DDEDA22F705850021EC1D /* SearchLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172DDED922F705850021EC1D /* SearchLocationVC.swift */; };
 		1733D03921E7813600F3EA16 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733D03821E7813600F3EA16 /* iAd.framework */; };
 		1737E68E21776FF7002368D3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737E68D21776FF7002368D3 /* StringExtension.swift */; };
 		1737E691217772A9002368D3 /* WashSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1737E690217772A9002368D3 /* WashSettingsViewController.swift */; };
@@ -287,6 +288,7 @@
 		172D7DAC219262AB009C0EB2 /* GetDirectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDirectionCell.swift; sourceTree = "<group>"; };
 		172D7DAE21926366009C0EB2 /* DeliveryPickupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPickupCell.swift; sourceTree = "<group>"; };
 		172D7DB0219266B4009C0EB2 /* DriverNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverNotesViewController.swift; sourceTree = "<group>"; };
+		172DDED922F705850021EC1D /* SearchLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationVC.swift; sourceTree = "<group>"; };
 		1733D03821E7813600F3EA16 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1737E68D21776FF7002368D3 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1737E690217772A9002368D3 /* WashSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashSettingsViewController.swift; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 				17FC1B16215E664E0045A52B /* RegisterViewController.swift */,
 				17E8A297217DF8E200AEFC78 /* LoginBaseViewController.swift */,
 				17784C24217E0DB800F2C861 /* ForgotViewController.swift */,
+				172DDED822F7055D0021EC1D /* SearchLocation */,
 				179F18FE2190955A00D811B4 /* Review */,
 				1726385F218EF93900C5F7D8 /* Receipt */,
 				171CF7A5218D7BD0005320B8 /* PickerView */,
@@ -710,6 +713,14 @@
 				172D7DAE21926366009C0EB2 /* DeliveryPickupCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		172DDED822F7055D0021EC1D /* SearchLocation */ = {
+			isa = PBXGroup;
+			children = (
+				172DDED922F705850021EC1D /* SearchLocationVC.swift */,
+			);
+			path = SearchLocation;
 			sourceTree = "<group>";
 		};
 		1737E68F2177727E002368D3 /* Wash Settings  */ = {
@@ -950,6 +961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171CF7A0218D6C2C005320B8 /* wash.swift in Sources */,
+				172DDEDA22F705850021EC1D /* SearchLocationVC.swift in Sources */,
 				17CA03AA2178B48C008CA0C4 /* WashSettingListViewController.swift in Sources */,
 				17E8A298217DF8E200AEFC78 /* LoginBaseViewController.swift in Sources */,
 				17248F4A2171B6EA0016D639 /* GoogleManager.swift in Sources */,
@@ -1226,7 +1238,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iClean/iClean.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AAU5JRTZU4;
 				ENABLE_BITCODE = NO;
@@ -1243,7 +1255,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaginian.iClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4b4cfe97-897b-4a48-8afa-3613d8e609da";
-				PROVISIONING_PROFILE_SPECIFIER = iCleanDistProvisioning;
+				PROVISIONING_PROFILE_SPECIFIER = iCleanDevProvProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "iClean/iClean-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1258,7 +1270,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = iClean/iClean.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AAU5JRTZU4;
 				ENABLE_BITCODE = NO;
@@ -1275,7 +1287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shaginian.iClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4b4cfe97-897b-4a48-8afa-3613d8e609da";
-				PROVISIONING_PROFILE_SPECIFIER = iCleanDistProvisioning;
+				PROVISIONING_PROFILE_SPECIFIER = iCleanDevProvProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "iClean/iClean-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

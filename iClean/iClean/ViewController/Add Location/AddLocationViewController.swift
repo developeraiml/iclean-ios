@@ -77,6 +77,28 @@ class AddLocationViewController: BaseViewController {
         
     }
     
+    
+    @IBAction func searchLocation(_ sender: Any) {
+        
+        guard let search = storyboard?.instantiateViewController(withIdentifier: "SearchLocationVC") as? SearchLocationVC else {
+            return
+        }
+        search.addressHandler = { [weak self] addressDict in
+            
+            if let address = addressDict as? [String: Any] {
+                self?.locationStateInputlist[0].name = address["State"] as? String
+                self?.locationStateInputlist[1].name = address["ZIP"] as? String
+                
+                self?.locationInputlist.last?.name = address["City"] as? String
+                self?.locationInputlist[1].name = "\(address["Name"] as? String ?? ""), \(address["Street"] as? String ?? ""), \(address["SubLocality"] as? String ?? "")"
+                
+                self?.tableview.reloadData()
+            }
+        }
+        present(search, animated: true, completion: nil)
+        
+    }
+    
     @objc func doneAction(sender: UIBarButtonItem) {
         
         let tag = selectedtag
