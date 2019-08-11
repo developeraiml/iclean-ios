@@ -3086,6 +3086,12 @@ Earn Credit</string>
                                             <outlet property="delegate" destination="naU-Zv-aGS" id="hYl-NX-vWn"/>
                                         </connections>
                                     </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No time slots available for the day." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6C-n8-fWq">
+                                        <rect key="frame" x="10" y="149.5" width="355" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="0.23024867960000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJa-vi-DRk">
                                         <rect key="frame" x="300" y="0.0" width="75" height="40"/>
                                         <constraints>
@@ -3118,8 +3124,11 @@ Earn Credit</string>
                                     <constraint firstItem="4CS-ay-7mP" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" id="JP1-Tp-oua"/>
                                     <constraint firstItem="RxG-Kz-1WO" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" id="K3E-PP-cT9"/>
                                     <constraint firstAttribute="height" constant="270" id="OI8-Wb-Ts4"/>
+                                    <constraint firstAttribute="trailing" secondItem="f6C-n8-fWq" secondAttribute="trailing" constant="10" id="TCv-1C-vtU"/>
                                     <constraint firstAttribute="trailing" secondItem="RxG-Kz-1WO" secondAttribute="trailing" id="VhP-sB-DHa"/>
+                                    <constraint firstItem="f6C-n8-fWq" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" constant="10" id="Xtf-IB-DCt"/>
                                     <constraint firstAttribute="trailing" secondItem="4CS-ay-7mP" secondAttribute="trailing" id="dSu-zK-gdz"/>
+                                    <constraint firstItem="f6C-n8-fWq" firstAttribute="centerY" secondItem="Lvh-Yx-feN" secondAttribute="centerY" constant="25" id="frU-Z8-n0p"/>
                                     <constraint firstItem="Q6L-D6-rD1" firstAttribute="leading" secondItem="Lvh-Yx-feN" secondAttribute="leading" id="lel-P2-NxY"/>
                                     <constraint firstItem="Q6L-D6-rD1" firstAttribute="top" secondItem="Lvh-Yx-feN" secondAttribute="top" id="mNl-ls-3sE"/>
                                     <constraint firstAttribute="trailing" secondItem="GJa-vi-DRk" secondAttribute="trailing" id="vrO-hl-lhI"/>
@@ -3136,6 +3145,8 @@ Earn Credit</string>
                     </view>
                     <connections>
                         <outlet property="datePickerView" destination="RxG-Kz-1WO" id="VuX-uG-MZY"/>
+                        <outlet property="doneButton" destination="GJa-vi-DRk" id="GdB-aC-C0I"/>
+                        <outlet property="errorMessage" destination="f6C-n8-fWq" id="YqG-dj-mzw"/>
                         <outlet property="pickerView" destination="4CS-ay-7mP" id="MUG-eh-Pd9"/>
                     </connections>
                 </viewController>

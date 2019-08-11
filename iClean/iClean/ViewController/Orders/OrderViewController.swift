@@ -301,14 +301,16 @@ extension OrderViewController {
         self.addChild(vc!)
         vc!.didMove(toParent: self)
         
-        vc?.selectHandler = { [weak self] dateString, sdDate in
+        vc?.selectHandler = { [weak self] dateString,timeString, sdDate in
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
-                if dateString.count != 0 {
+                if dateString?.count != 0 {
                     strongSelf.newOrderObject.pickupList[sender.tag].selectedDate = dateString
                     strongSelf.newOrderObject.pickupList[sender.tag].sDate = sdDate
+                    strongSelf.newOrderObject.pickupList[sender.tag].selectedTime = nil
+
                     strongSelf.tableview.reloadData()
                 }
                 
@@ -324,7 +326,8 @@ extension OrderViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .timePicker
-                
+        vc?.selectedDate = newOrderObject.pickupList[sender.tag].sDate
+
         if let timeString = newOrderObject.pickupList[sender.tag].selectedTime {
             vc?.selectedTime = timeString
         }
@@ -334,13 +337,18 @@ extension OrderViewController {
         self.addChild(vc!)
         vc!.didMove(toParent: self)
         
-        vc?.selectHandler = { [weak self] timeString, sdDate in
+        vc?.selectHandler = { [weak self] dateString, timeString, sdDate in
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
-                if timeString.count != 0 {
+                if timeString?.count != 0 {
                     strongSelf.newOrderObject.pickupList[sender.tag].selectedTime = timeString
+                    strongSelf.newOrderObject.pickupList[sender.tag].sDate = sdDate
+                    if dateString != nil {
+                        strongSelf.newOrderObject.pickupList[sender.tag].selectedDate = dateString
+
+                    }
                     strongSelf.tableview.reloadData()
                 }
                

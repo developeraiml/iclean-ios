@@ -246,12 +246,12 @@ extension OrderUpdateViewController {
         self.addChild(vc!)
         vc!.didMove(toParent: self)
         
-        vc?.selectHandler = { [weak self] dateString, sdDate in
+        vc?.selectHandler = { [weak self] dateString,timeString,sdDate in
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
-                if dateString.count != 0 {
+                if dateString?.count != 0 {
                     
                     if strongSelf.editPickInfo ==  true {
                         if sender.tag == 0 {
@@ -285,11 +285,17 @@ extension OrderUpdateViewController {
             
             if sender.tag == 0 {
                 vc?.selectedTime = pickObj?.pickupTime
+                vc?.selectedDate = pickObj?.pDate
+
             } else {
                 vc?.selectedTime = pickObj?.dropOffTime
+                vc?.selectedDate = pickObj?.dDate
+
             }
         } else {
             vc?.selectedTime = pickObj?.dropOffTime
+            vc?.selectedDate = pickObj?.dDate
+
         }
         
         vc?.willMove(toParent: self)
@@ -297,12 +303,12 @@ extension OrderUpdateViewController {
         self.addChild(vc!)
         vc!.didMove(toParent: self)
         
-        vc?.selectHandler = { [weak self] timeString, sdDate in
+        vc?.selectHandler = { [weak self] dateString,timeString, sdDate in
             
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
-                if timeString.count != 0 {
+                if timeString?.count != 0 {
                     
                     if strongSelf.editPickInfo ==  true {
                         if sender.tag == 0 {
