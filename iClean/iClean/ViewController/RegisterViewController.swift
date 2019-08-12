@@ -225,7 +225,7 @@ extension RegisterViewController: UITableViewDelegate,UITableViewDataSource {
         
         let user = self.userInfo?[indexPath.row]
         
-        cell?.userTextField.autocapitalizationType = (indexPath.section == 0) ? .words : .none
+        cell?.userTextField.autocapitalizationType = (indexPath.row == 0) ? .words : .none
         cell?.userTextField.placeholder = user?.placeholder
         cell?.userTextField.text = user?.name
         cell?.userTextField.keyboardType = user?.keyboardType ?? .asciiCapable

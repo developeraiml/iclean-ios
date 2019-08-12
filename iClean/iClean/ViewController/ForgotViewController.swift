@@ -45,15 +45,18 @@ class ForgotViewController: BaseViewController {
 
         api.performForgot(param: ["email": email as AnyObject]) { [weak self](success, response, error) in
             
+            debugPrint(response,success)
+            
             DispatchQueue.main.async(execute: { [weak self] in
                 guard let strongSelf = self else { return }
                 
                 strongSelf.hideLoadSpinner()
                 if success {
                     let message = response?["message"] as? String
-                    strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
-
-                    strongSelf.removeViewFromParent()
+                   // strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+                    strongSelf.presentAlert(title: nil, message: message ?? "Api Error", completion: { (status) in
+                        strongSelf.removeViewFromParent()
+                    })
                     
                 } else {
                     strongSelf.presentAlert(title: nil, message: error?.localizedDescription ?? "Network error")

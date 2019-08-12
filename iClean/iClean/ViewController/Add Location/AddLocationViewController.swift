@@ -77,9 +77,8 @@ class AddLocationViewController: BaseViewController {
         
     }
     
-    
-    @IBAction func searchLocation(_ sender: Any) {
-        
+    fileprivate func openSearchView() {
+       
         guard let search = storyboard?.instantiateViewController(withIdentifier: "SearchLocationVC") as? SearchLocationVC else {
             return
         }
@@ -96,6 +95,11 @@ class AddLocationViewController: BaseViewController {
             }
         }
         present(search, animated: true, completion: nil)
+    }
+    
+    @IBAction func searchLocation(_ sender: Any) {
+        
+      openSearchView()
         
     }
     
@@ -121,7 +125,13 @@ class AddLocationViewController: BaseViewController {
                 }
             } else {
                 if let cell = tableview.cellForRow(at: IndexPath(row: tag + 1, section: 0)) as? LocationInfoCell {
-                    cell.userTextField.becomeFirstResponder()
+                    if cell.userTextField.placeholder == "Address 1" {
+                      self.view.endEditing(true)
+                        openSearchView()
+                    } else {
+                        cell.userTextField.becomeFirstResponder()
+
+                    }
                 }
             }
             
@@ -385,6 +395,11 @@ extension AddLocationViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField)  {
         selectedtag = textField.tag
+
+        if textField.placeholder == "Address 1" {
+            textField.resignFirstResponder()
+            openSearchView()
+        }
         
     }
     
