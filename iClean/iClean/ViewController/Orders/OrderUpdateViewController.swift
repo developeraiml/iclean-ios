@@ -16,6 +16,9 @@ class OrderUpdateViewController: BaseViewController, UITableViewDataSource, UITa
     var editPickInfo : Bool = true
     var isRescheduled : Bool = false
 
+    fileprivate var pickupAvailSlot: [String]?
+    fileprivate var dropOffAvailSlot: [String]?
+    
     fileprivate var originY : CGFloat = 0
 
     override func viewDidLoad() {
@@ -34,8 +37,54 @@ class OrderUpdateViewController: BaseViewController, UITableViewDataSource, UITa
         }
         
         tableview.tableFooterView = UIView()
+        let pickUpDate = pickObj?.pickupDate ?? ""
+        let dropOffDate = pickObj?.dropOffDate ?? ""
+        let pickZip = pickObj?.pickupLocation?.zip_code ?? ""
+        let dropOffZip = pickObj?.dropOffLocation?.zip_code ?? ""
+        
+        getDriverAvialSlot(date: pickUpDate, zipCode: pickZip, isPickup: true)
+        getDriverAvialSlot(date: dropOffDate, zipCode: dropOffZip, isPickup: false)
+
+        
     }
     
+    fileprivate func getDriverAvialSlot(date: String, zipCode: String, isPickup: Bool) {
+        
+        let paramString = "is_pickup=\(isPickup)&zipcode=\(zipCode)&date=\(date)"
+        
+        showLoadSpinner(message: "Loading Timeslot ...")
+        
+        OrderNetworkModel().driverAvailSlot(paramString: paramString) { [weak self] (success, response, error) in
+            DispatchQueue.main.async(execute: { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.hideLoadSpinner()
+                
+                if success {
+                    
+                    let message = response?["message"] as? String
+                    
+                    if response?["status"] as? Int == 200 {
+                        
+                        if let innerData = response?["data"] as? [String: AnyObject] {
+                            
+                            if let slotList = innerData["list"] as? [String] {
+                                
+                                if isPickup == true {
+                                    strongSelf.pickupAvailSlot = slotList
+                                } else {
+                                    strongSelf.dropOffAvailSlot = slotList
+                                }
+                            }
+                        }
+                    } else {
+                        //error
+                        strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+                    }
+                }
+            })
+        }
+    }
 
     @objc fileprivate func dismissKeyBoard() {
         self.view.endEditing(true)
@@ -280,7 +329,8 @@ extension OrderUpdateViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
         vc?.type = .timePicker
-        
+        vc?.timeSlot = sender.tag == 0 ? pickupAvailSlot : dropOffAvailSlot
+
         if editPickInfo ==  true {
             
             if sender.tag == 0 {
