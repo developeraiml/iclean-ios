@@ -12,7 +12,8 @@ class OrderViewController: BaseViewController {
 
     @IBOutlet weak var tableview: UITableView!
     fileprivate var newOrderObject = newOrder()
-    
+    fileprivate var pickupAvailSlot: [String]?
+    fileprivate var dropOffAvailSlot: [String]?
     fileprivate var originY : CGFloat = 0
     
     override func viewDidLoad() {
@@ -77,6 +78,43 @@ class OrderViewController: BaseViewController {
                     
     }
     
+    fileprivate func getDriverAvialSlot(date: String, zipCode: String, isPickup: Bool) {
+        
+        let paramString = "is_pickup=\(isPickup)&zipcode=\(zipCode)&date=\(date)"
+        
+        showLoadSpinner(message: "Loading Timeslot ...")
+
+        OrderNetworkModel().driverAvailSlot(paramString: paramString) { [weak self] (success, response, error) in
+            DispatchQueue.main.async(execute: { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.hideLoadSpinner()
+                
+                if success {
+                    
+                    let message = response?["message"] as? String
+                    
+                    if response?["status"] as? Int == 200 {
+                        
+                        if let innerData = response?["data"] as? [String: AnyObject] {
+                            
+                            if let slotList = innerData["list"] as? [String] {
+                                
+                                if isPickup == true {
+                                    strongSelf.pickupAvailSlot = slotList
+                                } else {
+                                    strongSelf.dropOffAvailSlot = slotList
+                                }
+                            }
+                        }
+                    } else {
+                        //error
+                        strongSelf.presentAlert(title: nil, message: message ?? "Api Error")
+                    }
+                }
+            })
+        }
+    }
 
 }
 
@@ -290,6 +328,11 @@ extension OrderViewController {
     @objc func showDateUi(sender : UIButton) {
         
         self.view.endEditing(true)
+        if newOrderObject.pickupList[sender.tag].address == nil {
+            let text = (sender.tag == 0) ? "pick up" : "drop off"
+            presentAlert(title: "Location not selected", message: "please select the \(text) location")
+            return
+        }
 
         let vc = storyboard?.instantiateViewController(withIdentifier: GeneralConstants.pickerVC) as? PickerViewController
         
@@ -310,7 +353,14 @@ extension OrderViewController {
                     strongSelf.newOrderObject.pickupList[sender.tag].selectedDate = dateString
                     strongSelf.newOrderObject.pickupList[sender.tag].sDate = sdDate
                     strongSelf.newOrderObject.pickupList[sender.tag].selectedTime = nil
-
+                    
+                    let isPickup = sender.tag == 0 ? true : false
+                    let zipcode = strongSelf.newOrderObject.pickupList[sender.tag].address?.zip_code
+                    
+                    if let dateStr = dateString,let zip = zipcode {
+                        strongSelf.getDriverAvialSlot(date: dateStr, zipCode: zip, isPickup: isPickup)
+                    }
+                  
                     strongSelf.tableview.reloadData()
                 }
                 
@@ -327,6 +377,8 @@ extension OrderViewController {
         
         vc?.type = .timePicker
         vc?.selectedDate = newOrderObject.pickupList[sender.tag].sDate
+        
+        vc?.timeSlot = sender.tag == 0 ? pickupAvailSlot : dropOffAvailSlot
 
         if let timeString = newOrderObject.pickupList[sender.tag].selectedTime {
             vc?.selectedTime = timeString

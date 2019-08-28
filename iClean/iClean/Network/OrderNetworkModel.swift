@@ -31,4 +31,8 @@ class OrderNetworkModel: ApiNetwork {
         put(param, path: "order/\(orderId)/", postCompleted: handler)
     }
     
+    func driverAvailSlot(paramString: String, handler : @escaping (_ succeeded: Bool, _ result: [String: AnyObject]?, _ error : NSError?) -> Void) {
+        get("order/available/slots/?\(paramString)", completed: handler)
+    }
+    
 }

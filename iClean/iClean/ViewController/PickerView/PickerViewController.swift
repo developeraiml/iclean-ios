@@ -13,7 +13,7 @@ enum pickerType: Int {
     case timePicker
 }
 
-class PickerViewController: UIViewController {
+class PickerViewController: BaseViewController {
 
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var datePickerView: UIDatePicker!
@@ -32,6 +32,7 @@ class PickerViewController: UIViewController {
     var selectedTime : String?
     var selectedDateStr : String?
     var selectedDate : Date?
+    var timeSlot: [String]?
     
     fileprivate var dateFormatter = DateFormatter()
     
@@ -43,6 +44,14 @@ class PickerViewController: UIViewController {
         datePickerView.minimumDate = Date()
         errorMessage.isHidden = true
 
+        var timeAvailSlot: [String] = []
+        
+        for time in timeSlot ?? [] {
+            let text = time.replacingOccurrences(of: "_to_", with: " - ")
+            timeAvailSlot.append(text)
+        }
+        
+        timeSlot = timeAvailSlot
 
         if type == .datePicker {
             self.pickerView.isHidden = true
@@ -153,6 +162,13 @@ class PickerViewController: UIViewController {
             }
         }
         
+        if type == .timePicker {
+            if timeSlot?.contains(selectedString) == false {
+                presentAlert(title: "Drive not avilable", message: "Driver is not available on the selected timeslot")
+                return
+            }
+        }
+        
         if let handler = selectHandler {
             handler(selectedDateStr,selectedString, selectedDate)
         }
@@ -189,9 +205,20 @@ extension PickerViewController: UIPickerViewDelegate,UIPickerViewDataSource {
         return filterPickerList?.count ?? 0
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        return filterPickerList?[row]
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-        return filterPickerList?[row]
+        let string = filterPickerList?[row] ?? ""
+        var color = UIColor.black
+        if timeSlot?.contains(string) == false {
+            color = UIColor.lightGray
+        }
+        
+        return NSAttributedString(string: string, attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
