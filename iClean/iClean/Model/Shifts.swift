@@ -11,6 +11,7 @@ import UIKit
 class Shifts: NSObject {
 
     var shiftDate : String?
+    var shiftHour : String = ""
     var list: [driverOrder] = []
     
     init(with object : [AnyObject]) {

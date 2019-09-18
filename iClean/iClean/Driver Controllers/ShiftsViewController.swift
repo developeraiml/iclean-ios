@@ -14,6 +14,14 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var nextCustomerBtn: UIButton!
     @IBOutlet weak var tableview: UITableView!
     
+    internal let slotOrder = ["7am_to_8am","8am_to_9am",
+                              "9am_to_10am","10am_to_11am",
+                              "11am_to_12pm","12pm_to_1pm",
+                              "1pm_to_2pm","2pm_to_3pm",
+                              "3pm_to_4pm", "4pm_to_5pm",
+                              "5pm_to_6pm","6pm_to_7pm",
+                              "7pm_to_8pm","8pm_to_9pm"]
+    
     fileprivate let lightGreenColor = UIColor(red: 76.0/255.0, green: 222.0/255.0, blue: 168.0/255.0, alpha: 1.0)
     fileprivate let creamWhiteColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 248.0/255.0, alpha: 1.0)
     
@@ -83,6 +91,7 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                                         let object = list[key]
                                         let shift = Shifts(with: object as! [AnyObject])
                                         
+                                        shift.shiftHour = key
                                         let timeSlot = key.lowercased().replacingOccurrences(of: "_to_", with: " - ", options: .literal, range: nil)
                                         
                                         shift.shiftDate = keys.lowercased().replacingOccurrences(of: "_to_", with: " - ", options: .literal, range: nil)
@@ -103,7 +112,8 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                                 return fName < sName
                             })
                             
-                            strongSelf.shiftList = list
+                        let reorderTimeslotList = strongSelf.reorderTimeSlotList(array: list ?? [], order: strongSelf.slotOrder)
+                            strongSelf.shiftList = reorderTimeslotList
                             
                             strongSelf.tableview.reloadData()
                             
@@ -119,6 +129,22 @@ class ShiftsViewController: BaseViewController, UITableViewDataSource, UITableVi
                 }
             })
         }
+    }
+    
+    fileprivate func reorderTimeSlotList(array : [Shifts] , order : [String]) -> [Shifts]{
+        
+        var list: [Shifts] = []
+        
+        for key in order {
+        let sortList =  (array.filter{$0.shiftHour == key})
+            
+            if sortList.count != 0 {
+                list.append(contentsOf: sortList)
+            }
+        }
+        
+        return list
+        
     }
     
     @IBAction func nextCustomerAction(_ sender: Any) {
