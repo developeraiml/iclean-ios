@@ -78,23 +78,28 @@ class AddLocationViewController: BaseViewController {
     }
     
     fileprivate func openSearchView() {
-       
-        guard let search = storyboard?.instantiateViewController(withIdentifier: "SearchLocationVC") as? SearchLocationVC else {
-            return
-        }
-        search.addressHandler = { [weak self] addressDict in
+        
+        DispatchQueue.main.async {
+            self.view.endEditing(true)
             
-            if let address = addressDict as? [String: Any] {
-                self?.locationStateInputlist[0].name = address["State"] as? String
-                self?.locationStateInputlist[1].name = address["ZIP"] as? String
-                
-                self?.locationInputlist.last?.name = address["City"] as? String
-                self?.locationInputlist[1].name = "\(address["Name"] as? String ?? ""), \(address["Street"] as? String ?? ""), \(address["SubLocality"] as? String ?? "")"
-                
-                self?.tableview.reloadData()
+            guard let search = self.storyboard?.instantiateViewController(withIdentifier: "SearchLocationVC") as? SearchLocationVC else {
+                return
             }
+            search.addressHandler = { [weak self] addressDict in
+                
+                if let address = addressDict as? [String: Any] {
+                    self?.locationStateInputlist[0].name = address["State"] as? String
+                    self?.locationStateInputlist[1].name = address["ZIP"] as? String
+                    
+                    self?.locationInputlist.last?.name = address["City"] as? String
+                    self?.locationInputlist[1].name = "\(address["Name"] as? String ?? ""), \(address["Street"] as? String ?? ""), \(address["SubLocality"] as? String ?? "")"
+                    
+                    self?.tableview.reloadData()
+                }
+            }
+            self.present(search, animated: true, completion: nil)
         }
-        present(search, animated: true, completion: nil)
+
     }
     
     @IBAction func searchLocation(_ sender: Any) {
@@ -126,7 +131,6 @@ class AddLocationViewController: BaseViewController {
             } else {
                 if let cell = tableview.cellForRow(at: IndexPath(row: tag + 1, section: 0)) as? LocationInfoCell {
                     if cell.userTextField.placeholder == "Address 1" {
-                      self.view.endEditing(true)
                         openSearchView()
                     } else {
                         cell.userTextField.becomeFirstResponder()
@@ -397,7 +401,6 @@ extension AddLocationViewController: UITextFieldDelegate {
         selectedtag = textField.tag
 
         if textField.placeholder == "Address 1" {
-            textField.resignFirstResponder()
             openSearchView()
         }
         
